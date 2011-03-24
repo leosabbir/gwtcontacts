@@ -27,16 +27,6 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/jta.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/log4j-1.2.11.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.asm-3.0.0.M3.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.beans-3.0.0.M3.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.context-3.0.0.M3.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.context.support-3.0.0.M3.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.core-3.0.0.M3.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.expression-3.0.0.M3.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.jdbc-3.0.0.M3.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.orm-3.0.0.M3.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.transaction-3.0.0.M4.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.web-3.0.0.M3.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.web.servlet-3.0.0.M3.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/slf4j-api-1.5.8.jar"/>
@@ -44,5 +34,22 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/hibernate-entitymanager-3.5.5-Final.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-security-acl-3.1.0.RC1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-security-config-3.1.0.RC1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-security-core-3.1.0.RC1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-security-taglibs-3.1.0.RC1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-security-web-3.1.0.RC1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.aop-3.1.0.M1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.asm-3.1.0.M1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.beans-3.1.0.M1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.context-3.1.0.M1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.context.support-3.1.0.M1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.core-3.1.0.M1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.expression-3.1.0.M1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.jdbc-3.1.0.M1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.orm-3.1.0.M1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.transaction-3.1.0.M1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.web-3.1.0.M1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.web.servlet-3.1.0.M1.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

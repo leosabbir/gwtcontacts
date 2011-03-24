@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns:security="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+		<security:http auto-config="true">
+		 
+		 	<security:intercept-url pattern="/"/>
+		 	
+		 	<!-- don't intercept rpc calls -->
+		 	<security:intercept-url pattern="/contacts/**" access="ROLE_USER" />
+		    <!-- Don't set any role restrictions on login.jsp -->
+		    <security:intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		 
+		    <!-- Restrict access to ALL other pages -->
+		    <security:intercept-url pattern="/**" access="ROLE_USER" />
+		 
+		    <!-- Set the login page and what to do if login fails -->
+		    <security:form-login login-page="/login" authentication-failure-url="/login.jsp?login_error=1" />
+		 
+		    <!-- Set the logout page and where to go after logout is successful -->
+		    <security:logout logout-url="/logout" logout-success-url="/logoutSuccess.jsp" />
+		</security:http>
+		 
+<!--		 Configure the authentication provider -->
+<!--		<security:authentication-provider>-->
+<!--		    <security:jdbc-user-service data-source-ref="dataSource" />-->
+<!--		</security:authentication-provider>-->
+
+		<security:authentication-manager alias="authenticationManager">
+		    <security:authentication-provider>
+		      <security:user-service>
+		      		<security:user authorities="ROLE_USER" name="guest" password="guest"/>
+		      </security:user-service>
+    		</security:authentication-provider>
+  		</security:authentication-manager> 
+
+
+</beans:beans>
