@@ -29,6 +29,7 @@
  
         <tr><td colspan='2'><input name="submit" type="submit"></td></tr>
         <tr><td colspan='2'><input name="reset" type="reset"></td></tr>
+        <tr><td colspan='2'><a href="/register">Register</a></td></tr>
       </table>
     </form>
   </body>

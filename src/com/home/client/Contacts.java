@@ -1,6 +1,8 @@
 package com.home.client;
 
 import com.home.shared.FieldVerifier;
+import com.home.shared.services.IGreetingService;
+import com.home.shared.services.IGreetingServiceAsync;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -32,8 +34,8 @@ public class Contacts implements EntryPoint {
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting service.
 	 */
-	private final GreetingServiceAsync greetingService = GWT
-			.create(GreetingService.class);
+	private final IGreetingServiceAsync greetingService = GWT
+			.create(IGreetingService.class);
 
 	/**
 	 * This is the entry point method.
