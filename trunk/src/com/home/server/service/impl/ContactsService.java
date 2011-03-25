@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.home.server.dao.ITestDao;
 import com.home.server.service.IContactsService;
-import com.home.shared.entities.Test;
+import com.home.shared.entities.ContactDetails;
 
 @Service
 public class ContactsService implements IContactsService {
@@ -22,35 +22,36 @@ public class ContactsService implements IContactsService {
 	
 	@Override
 	@Transactional
-	public void delete(int id) {
-		Test test = this.contactDao.findByProductCode(id);
+	public boolean delete(int id) {
+		ContactDetails test = this.contactDao.findByProductCode(id);
 		if(test != null){
-			this.contactDao.delete(test);
+			return this.contactDao.delete(test);
 		}
+		return false;
 	}
 
 	@Override
 	@Transactional
-	public Test findByProductCode(int code) {
+	public ContactDetails findByProductCode(int code) {
 		return this.contactDao.findByProductCode(code);
 	}
 
 	@Override
 	@Transactional
-	public void save(Test test) {
-		this.contactDao.save(test);
+	public boolean save(ContactDetails test) {
+		return this.contactDao.save(test);
 	}
 
 	@Override
-	public void update(Test test) {
-		Test updated = this.contactDao.findByProductCode(test.getId());
+	public boolean update(ContactDetails test) {
+		ContactDetails updated = this.contactDao.findByProductCode(test.getId());
 		updated.setAddress(test.getAddress());
-		this.contactDao.update(updated);
+		return this.contactDao.update(updated);
 		
 	}
 
 	@Override
-	public List<Test> getAllContacts() {
+	public List<ContactDetails> getAllContacts() {
 		return this.contactDao.getAllContacts();
 	}
 

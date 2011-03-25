@@ -9,15 +9,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="test")
-public class Test implements Serializable {
+@Table(name="contactdetails")
+public class ContactDetails implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String name;
 	private String mobile;
 	private String address;
 	
-	public Test(){
+	public ContactDetails(){
 	}
 
 	

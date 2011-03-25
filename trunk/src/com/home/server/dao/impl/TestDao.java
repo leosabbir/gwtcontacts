@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.home.server.dao.ITestDao;
-import com.home.shared.entities.Test;
+import com.home.shared.entities.ContactDetails;
 
 @Repository
 public class TestDao implements ITestDao{
@@ -21,33 +21,36 @@ public class TestDao implements ITestDao{
     }
 	
 	@Override
-	public void delete(Test test) {
+	public boolean delete(ContactDetails test) {
 		this.hibernateTemplate.delete(test);
+		return true;
 		
 	}
 
 	@Override
-	public Test findByProductCode(int code) {
+	public ContactDetails findByProductCode(int code) {
 		//List obj = hibernateTemplate.find("select t.id, t.name, t.mobile, t.address from test as t where id = ?1", code);
 		//Test test = new Test(obj["name"], obj["mobile"], obj["address"]);
-		Test contact = (Test) this.hibernateTemplate.get("com.home.shared.entities.Test", code);
+		ContactDetails contact = (ContactDetails) this.hibernateTemplate.get("com.home.shared.entities.Test", code);
 		return contact; 
 	}
 
 	@Override
-	public void save(Test test) {
-		hibernateTemplate.saveOrUpdate(test);		
+	public boolean save(ContactDetails test) {
+		hibernateTemplate.saveOrUpdate(test);
+		return true;
 	}
 
 	@Override
-	public void update(Test test) {
-		hibernateTemplate.update(test);
+	public boolean update(ContactDetails test) {
+		this.hibernateTemplate.update(test);
+		return true;
 		
 	}
 
 	@Override
 	@Transactional
-	public List<Test> getAllContacts() {
+	public List<ContactDetails> getAllContacts() {
 		//return hibernateTemplate.getSessionFactory().getCurrentSession().createQuery("from test").list();
 		return hibernateTemplate.find("from Test");
 		

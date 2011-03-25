@@ -3,16 +3,16 @@ package com.home.server;
 
 import java.util.List;
 
-import com.home.client.GreetingService;
 import com.home.server.service.IContactsService;
 import com.home.shared.FieldVerifier;
-import com.home.shared.entities.Test;
+import com.home.shared.entities.ContactDetails;
+import com.home.shared.services.IGreetingService;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
  * The server side implementation of the RPC service.
  */
-public class GreetingServiceImpl implements GreetingService {
+public class GreetingServiceImpl implements IGreetingService {
 
 	private final IContactsService contactService;
 	
@@ -22,14 +22,14 @@ public class GreetingServiceImpl implements GreetingService {
 	
 	public String greetServer(String input) throws IllegalArgumentException {
 		// Verify that the input is valid.
-		Test test = new Test();
+		ContactDetails test = new ContactDetails();
 		test.setAddress("Bhaktapur");
 		test.setMobile("9841753847");
 		test.setName("Bishwa");
 		this.contactService.save(test);
 		Object obj = this.contactService.findByProductCode(1);
 		this.contactService.delete(3);
-		List<Test> allContacts = this.contactService.getAllContacts();
+		List<ContactDetails> allContacts = this.contactService.getAllContacts();
 		if (!FieldVerifier.isValidName(input)) {
 			// If the input is not valid, throw an IllegalArgumentException back to
 			// the client.

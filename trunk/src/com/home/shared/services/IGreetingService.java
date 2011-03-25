@@ -1,4 +1,4 @@
-package com.home.client;
+package com.home.shared.services;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
@@ -7,6 +7,6 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  * The client side stub for the RPC service.
  */
 @RemoteServiceRelativePath("greet.rpc")
-public interface GreetingService extends RemoteService {
+public interface IGreetingService extends RemoteService {
 	String greetServer(String name) throws IllegalArgumentException;
 }
