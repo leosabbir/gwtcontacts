@@ -41,7 +41,7 @@ public class Contacts implements EntryPoint {
 	public void onModuleLoad() {
 		final Button sendButton = new Button("Send");
 		final TextBox nameField = new TextBox();
-		nameField.setText("GWT User");
+		nameField.setText("Sabbir");
 		final Label errorLabel = new Label();
 
 		// We can add style names to widgets

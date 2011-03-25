@@ -8,11 +8,11 @@
 
 <html>
   <head>
-    <title>Login</title>
+    <title>Log Into Your Account</title>
   </head>
  
   <body>
-    <h1>Login</h1>
+    <h1>Enter Your Login Credentials</h1>
  
     <c:if test="${not empty param.login_error}">
       <font color="red">

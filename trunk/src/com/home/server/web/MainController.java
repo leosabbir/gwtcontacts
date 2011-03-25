@@ -16,14 +16,4 @@ public class MainController {
 	public ModelAndView main(){
 		return new ModelAndView("main");
 	}
-	
-	@RequestMapping(value = "/login")
-	public ModelAndView login(){
-		ModelAndView loginView = new ModelAndView("login");
-		loginView.addObject("msg", "Login is required!!");
-		return loginView;
-	}
-	
-	
-
 }

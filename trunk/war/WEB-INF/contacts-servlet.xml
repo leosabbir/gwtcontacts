@@ -17,5 +17,6 @@
 	</bean>
 	
    	<bean class="com.home.server.web.MainController"/>
+   	<bean class="com.home.server.web.jsp.LoginController"/>
    	
 </beans>
