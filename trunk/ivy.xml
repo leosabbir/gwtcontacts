@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+	<info organisation="home" module="gwtContacts" status="integration"/>
+	<configurations>
+		<conf name="compile"/>
+	</configurations>
+	
+	
+	<dependencies>
+		<dependency org="org.antlr" name="com.springsource.org.antlr" rev="3.0.1"/>
+		<dependency org="commons-collections" name="commons-collections" rev="3.2.1"/>
+		
+		<dependency org="org.apache.openejb" name="commons-dbcp-all" rev="1.3-r699049"/>
+		
+		<dependency org="commons-logging" name="commons-logging" rev="1.0"/>
+		<dependency org="org.junit" name="com.springsource.org.junit" rev="4.7.0"/>
+		<dependency org="org.dom4j" name="com.springsource.org.dom4j" rev="1.6.1"/>
+		
+		<dependency org="com.google.gwt" name="gwt-servlet" rev="2.2.0"/>
+		<dependency org="com.google.gwt" name="gwt-user" rev="2.2.0"/>
+		
+		<dependency org="org.hibernate" name="com.springsource.org.hibernate.annotations" rev="3.4.0.GA"/>
+		<dependency org="org.hibernate" name="com.springsource.org.hibernate.annotations.common" rev="3.3.0.GA"/>
+		<dependency org="org.hibernate" name="com.springsource.org.hibernate.ejb" rev="3.4.0.GA"/>
+		<dependency org="org.hibernate" name="ejb3-persistence" rev="1.0.2.GA"/>
+		<dependency org="org.hibernate" name="com.springsource.org.hibernate" rev="3.3.2.GA"/>
+		<dependency org="org.hibernate" name="com.springsource.org.hibernate.validator" rev="4.0.0.GA"/>
+		
+		<dependency org="org.jboss.javassist" name="com.springsource.javassist" rev="3.9.0.GA"/>
+		<dependency org="javax.servlet" name="com.springsource.javax.servlet.jsp.jstl" rev="1.2.0"/>
+		<dependency org="org.slf4j" name="com.springsource.slf4j.log4j" rev="1.5.6"/>
+		<dependency org="com.mysql.jdbc" name="com.springsource.com.mysql.jdbc" rev="5.1.6"/>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.6.1"/>
+		<dependency org="org.aopalliance" name="com.springsource.org.aopalliance" rev="1.0.0"/>
+		<dependency org="javax.servlet" name="servlet-api" rev="2.5"/>
+		
+		<dependency org="org.springframework" name="org.springframework.aop" rev="${spring.version}"/>
+		<dependency org="org.springframework" name="org.springframework.asm" rev="${spring.version}"/>
+		<dependency org="org.springframework" name="org.springframework.beans" rev="${spring.version}"/>
+		<dependency org="org.springframework" name="org.springframework.context" rev="${spring.version}"/>
+		<dependency org="org.springframework" name="org.springframework.context.support" rev="${spring.version}"/>
+		<dependency org="org.springframework" name="org.springframework.core" rev="${spring.version}"/>
+		<dependency org="org.springframework" name="org.springframework.expression" rev="${spring.version}"/>
+		<dependency org="org.springframework" name="org.springframework.jdbc" rev="${spring.version}"/>
+		<dependency org="org.springframework" name="org.springframework.orm" rev="${spring.version}"/>
+		<dependency org="org.springframework" name="org.springframework.transaction" rev="${spring.version}"/>
+		<dependency org="org.springframework" name="org.springframework.web" rev="${spring.version}"/>
+		<dependency org="org.springframework" name="org.springframework.web.servlet" rev="${spring.version}"/>
+		
+		<dependency org="org.springframework.security" name="org.springframework.security.core" rev="${spring.security.version}"/>
+		<dependency org="org.springframework.security" name="org.springframework.security.config" rev="${spring.security.version}"/>
+		<dependency org="org.springframework.security" name="org.springframework.security.web" rev="${spring.security.version}"/>
+	
+	</dependencies>
+	
+	
+</ivy-module>
