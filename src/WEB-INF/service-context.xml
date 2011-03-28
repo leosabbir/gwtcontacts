@@ -10,4 +10,6 @@
 		<constructor-arg ref="contactsDao"/>
 	</bean>
 	
+	<bean id="registrationService" class="com.home.server.service.impl.RegistrationService"/>
+	
 </beans>

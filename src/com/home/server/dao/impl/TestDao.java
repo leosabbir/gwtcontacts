@@ -31,7 +31,7 @@ public class TestDao implements ITestDao{
 	public ContactDetails findByProductCode(int code) {
 		//List obj = hibernateTemplate.find("select t.id, t.name, t.mobile, t.address from test as t where id = ?1", code);
 		//Test test = new Test(obj["name"], obj["mobile"], obj["address"]);
-		ContactDetails contact = (ContactDetails) this.hibernateTemplate.get("com.home.shared.entities.Test", code);
+		ContactDetails contact = (ContactDetails) this.hibernateTemplate.get("com.home.shared.entities.ContactDetails", code);
 		return contact; 
 	}
 
@@ -52,7 +52,7 @@ public class TestDao implements ITestDao{
 	@Transactional
 	public List<ContactDetails> getAllContacts() {
 		//return hibernateTemplate.getSessionFactory().getCurrentSession().createQuery("from test").list();
-		return hibernateTemplate.find("from Test");
+		return hibernateTemplate.find("from ContactDetails");
 		
 	}
 

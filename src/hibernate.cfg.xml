@@ -4,6 +4,6 @@
 
 <hibernate-configuration>
   <session-factory>
-    <mapping class="com.home.server.entities.Test"/>
+    <mapping class="com.home.shared.entities.ContactDetails"/>
   </session-factory>
 </hibernate-configuration>
