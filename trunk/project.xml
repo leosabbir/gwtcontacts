@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name = "GwtContacts" basedir="." default = "compile" 
+	xmlns:ivy="antlib:org.apache.ivy.ant">
+	
+	<property name = "src.dir" value="${basedir}/src" />
+	<property name = "bin.dir" value="${basedir}/war/WEB-INF/classes" />
+	<property name = "ivy.lib.dir" value="${basedir}/lib" />
+	<property name="spring.version" value="3.0.5.RELEASE"/>
+	<property name="spring.security.version" value="3.0.5.RELEASE"/>
+	
+	<path id="lib.path.id">
+		<fileset dir="${ivy.lib.dir}" />
+	</path>
+	
+	<target name = "init">
+		<mkdir dir = "${bin.dir}"/>
+		<ivy:retrieve/>
+	</target>
+	
+	<target name = "compile" depends= "init">
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" fork="true">
+			<classpath refid = "lib.path.id"/>
+		</javac>		
+	</target>
+	
+	<target name="clean">
+			<delete dir="${bin.dir}"/>
+			<delete dir="${ivy.lib.dir}"/>
+		</target>
+</project>
