@@ -6,53 +6,56 @@
 	<info organisation="home" module="gwtContacts" status="integration"/>
 	<configurations>
 		<conf name="compile"/>
+		<conf name="runtime"/>
 	</configurations>
 	
 	
 	<dependencies>
-		<dependency org="org.antlr" name="com.springsource.org.antlr" rev="3.0.1"/>
-		<dependency org="commons-collections" name="commons-collections" rev="3.2.1"/>
+		<dependency org="org.antlr" name="antlr" rev="3.3" conf="compile->default"/>
+		<dependency org="commons-collections" name="commons-collections" rev="3.2.1" conf="compile->default"/>
 		
-		<dependency org="org.apache.openejb" name="commons-dbcp-all" rev="1.3-r699049"/>
+		<dependency org="org.apache.openejb" name="commons-dbcp-all" rev="1.3-r699049" conf="compile->default"/>
 		
-		<dependency org="commons-logging" name="commons-logging" rev="1.0"/>
-		<dependency org="org.junit" name="com.springsource.org.junit" rev="4.7.0"/>
-		<dependency org="org.dom4j" name="com.springsource.org.dom4j" rev="1.6.1"/>
+		<dependency org="commons-logging" name="commons-logging" rev="1.0" conf="compile->default"/>
+		<dependency org="junit" name="junit" rev="4.8.2" conf="compile->default"/>
+		<dependency org="dom4j" name="dom4j" rev="1.6.1" conf="compile->default"/>
 		
-		<dependency org="com.google.gwt" name="gwt-servlet" rev="2.2.0"/>
-		<dependency org="com.google.gwt" name="gwt-user" rev="2.2.0"/>
+		<dependency org="com.google.gwt" name="gwt-servlet" rev="2.2.0" conf="compile->default"/>
+		<dependency org="com.google.gwt" name="gwt-user" rev="2.2.0" conf="compile->default"/>
 		
-		<dependency org="org.hibernate" name="com.springsource.org.hibernate.annotations" rev="3.4.0.GA"/>
-		<dependency org="org.hibernate" name="com.springsource.org.hibernate.annotations.common" rev="3.3.0.GA"/>
-		<dependency org="org.hibernate" name="com.springsource.org.hibernate.ejb" rev="3.4.0.GA"/>
-		<dependency org="org.hibernate" name="ejb3-persistence" rev="1.0.2.GA"/>
-		<dependency org="org.hibernate" name="com.springsource.org.hibernate" rev="3.3.2.GA"/>
-		<dependency org="org.hibernate" name="com.springsource.org.hibernate.validator" rev="4.0.0.GA"/>
+		<dependency org="org.hibernate" name="hibernate-annotations" rev="3.4.0.GA" conf="compile->default"/>
+		<dependency org="org.hibernate" name="hibernate-commons-annotations" rev="3.3.0.ga" conf="compile->default"/>
+<!--		<dependency org="org.hibernate" name="com.springsource.org.hibernate.ejb" rev="3.4.0.GA" conf="compile->default"/>-->
+		<dependency org="org.hibernate" name="ejb3-persistence" rev="1.0.2.GA" conf="compile->default"/>
+		<dependency org="org.hibernate" name="hibernate" rev="3.2.7.ga" conf="compile->default"/>
+		<dependency org="org.hibernate" name="hibernate-validator" rev="4.0.2.GA" conf="compile->default"/>
 		
-		<dependency org="org.jboss.javassist" name="com.springsource.javassist" rev="3.9.0.GA"/>
-		<dependency org="javax.servlet" name="com.springsource.javax.servlet.jsp.jstl" rev="1.2.0"/>
-		<dependency org="org.slf4j" name="com.springsource.slf4j.log4j" rev="1.5.6"/>
-		<dependency org="com.mysql.jdbc" name="com.springsource.com.mysql.jdbc" rev="5.1.6"/>
-		<dependency org="org.slf4j" name="slf4j-api" rev="1.6.1"/>
-		<dependency org="org.aopalliance" name="com.springsource.org.aopalliance" rev="1.0.0"/>
-		<dependency org="javax.servlet" name="servlet-api" rev="2.5"/>
+		<dependency org="org.javassist" name="javassist" rev="3.14.0-GA" conf="compile->default"/>
+		<dependency org="javax.servlet" name="jstl" rev="1.2" conf="compile->default"/>
+		<dependency org="log4j" name="log4j" rev="1.2.9" conf="compile->default"/>
+		<dependency org="mysql" name="mysql-connector-java" rev="5.1.9" conf="compile->default"/>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.6.1" conf="compile->default"/>
+		<dependency org="aopalliance" name="aopalliance" rev="1.0" conf="compile->default"/>
+		<dependency org="javax.servlet" name="servlet-api" rev="2.5" conf="compile->default"/>
 		
-		<dependency org="org.springframework" name="org.springframework.aop" rev="${spring.version}"/>
-		<dependency org="org.springframework" name="org.springframework.asm" rev="${spring.version}"/>
-		<dependency org="org.springframework" name="org.springframework.beans" rev="${spring.version}"/>
-		<dependency org="org.springframework" name="org.springframework.context" rev="${spring.version}"/>
-		<dependency org="org.springframework" name="org.springframework.context.support" rev="${spring.version}"/>
-		<dependency org="org.springframework" name="org.springframework.core" rev="${spring.version}"/>
-		<dependency org="org.springframework" name="org.springframework.expression" rev="${spring.version}"/>
-		<dependency org="org.springframework" name="org.springframework.jdbc" rev="${spring.version}"/>
-		<dependency org="org.springframework" name="org.springframework.orm" rev="${spring.version}"/>
-		<dependency org="org.springframework" name="org.springframework.transaction" rev="${spring.version}"/>
-		<dependency org="org.springframework" name="org.springframework.web" rev="${spring.version}"/>
-		<dependency org="org.springframework" name="org.springframework.web.servlet" rev="${spring.version}"/>
+		<dependency org="org.springframework" name="spring-aop" rev="${spring.version}" conf="compile->default"/>
+		<dependency org="org.springframework" name="spring-asm" rev="${spring.version}" conf="compile->default"/>
+		<dependency org="org.springframework" name="spring-beans" rev="${spring.version}" conf="compile->default"/>
+		<dependency org="org.springframework" name="spring-context" rev="${spring.version}" conf="compile->default"/>
+		<dependency org="org.springframework" name="spring-context-support" rev="${spring.version}" conf="compile->default"/>
+		<dependency org="org.springframework" name="spring-core" rev="${spring.version}" conf="compile->default"/>
+		<dependency org="org.springframework" name="spring-expression" rev="${spring.version}" conf="compile->default"/>
+		<dependency org="org.springframework" name="spring-jdbc" rev="${spring.version}" conf="compile->default"/>
+		<dependency org="org.springframework" name="spring-orm" rev="${spring.version}" conf="compile->default"/>
+<!--		<dependency org="org.springframework" name="spring-transaction" rev="${spring.version}" conf="compile->default"/>-->
+		<dependency org="org.springframework" name="spring-tx" rev="${spring.version}" conf="compile->default"/>
+		<dependency org="org.springframework" name="spring-web" rev="${spring.version}" conf="compile->default"/>
+<!--		<dependency org="org.springframework" name="spring-web-servlet" rev="${spring.version}" conf="compile->default"/>-->
+		<dependency org="org.springframework" name="spring-webmvc" rev="${spring.version}" conf="compile->default"/>
 		
-		<dependency org="org.springframework.security" name="org.springframework.security.core" rev="${spring.security.version}"/>
-		<dependency org="org.springframework.security" name="org.springframework.security.config" rev="${spring.security.version}"/>
-		<dependency org="org.springframework.security" name="org.springframework.security.web" rev="${spring.security.version}"/>
+		<dependency org="org.springframework.security" name="spring-security-core" rev="${spring.security.version}" conf="compile->default"/>
+		<dependency org="org.springframework.security" name="spring-security-config" rev="${spring.security.version}" conf="compile->default"/>
+		<dependency org="org.springframework.security" name="spring-security-web" rev="${spring.security.version}" conf="compile->default"/>
 	
 	</dependencies>
 	
