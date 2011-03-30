@@ -16,6 +16,7 @@
 		<property name="mappings">
 		  <value>
 		    /**/greet.rpc=greetController
+		    /**/contact.rpc=contactServiceController
 		  </value>
 		</property>
 	</bean>
@@ -30,6 +31,14 @@
 	<bean name="greetController" class="com.home.server.web.GWTController">
 	    <property name="remoteService">
 	      <bean class="com.home.server.GreetingServiceImpl">
+	      	<constructor-arg ref="contactsService"/>
+	      </bean>
+	    </property>
+  	</bean>
+  	
+  	<bean name="contactServiceController" class="com.home.server.web.GWTController">
+	    <property name="remoteService">
+	      <bean class="com.home.server.web.rpc.ContactApi">
 	      	<constructor-arg ref="contactsService"/>
 	      </bean>
 	    </property>

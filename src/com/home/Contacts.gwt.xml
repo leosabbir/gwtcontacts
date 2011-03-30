@@ -2,6 +2,7 @@
 <module rename-to='contacts'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
+  <inherits name="com.google.gwt.activity.Activity"/>
 
   <!-- Inherit the default GWT style sheet.  You can change       -->
   <!-- the theme of your GWT application by uncommenting          -->
@@ -13,10 +14,14 @@
   <!-- Other module inherits                                      -->
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='com.home.client.Contacts'/>
+  <entry-point class='com.home.client.ControllerApp'/>
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
   <source path='shared'/>
+
+	<replace-with class="com.home.client.view.impl.ClientFactoryImpl">
+		<when-type-is class="com.home.client.view.ClientFactory"/>
+	</replace-with>
 
 </module>

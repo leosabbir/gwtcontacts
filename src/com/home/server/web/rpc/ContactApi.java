@@ -27,14 +27,14 @@ public class ContactApi implements IContactService {
 
 	@Override
 	public ContactDetails findContact(int contactId) {
-		// TODO Auto-generated method stub
-		return null;
+		ContactDetails detail = contactsService.findByProductCode(contactId);
+		return detail;
 	}
 
 	@Override
 	public List<ContactDetails> getAllContacts() {
-		// TODO Auto-generated method stub
-		return null;
+		List<ContactDetails> details = contactsService.getAllContacts(); 
+		return details;
 	}
 
 	@Override
