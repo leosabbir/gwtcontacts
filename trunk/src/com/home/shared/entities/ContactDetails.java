@@ -1,22 +1,18 @@
 package com.home.shared.entities;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.google.gwt.user.client.rpc.IsSerializable;
+
 @Entity
 @Table(name="contactdetails")
-public class ContactDetails implements Serializable {
-	
-	/**
-	 * 
-	 */
+public class ContactDetails implements IsSerializable {
 	private static final long serialVersionUID = 1L;
-	private Integer id;
+	private Integer userId;
 	private String name;
 	private String mobile;
 	private String address;
@@ -27,13 +23,13 @@ public class ContactDetails implements Serializable {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="id")
+	@Column(name="userid")
 	public Integer getId(){
-		return id;
+		return this.userId;
 	}
 	
 	public void setId(Integer value){
-		this.id = value;
+		this.userId = value;
 	}
 
 	@Column(name="name")
