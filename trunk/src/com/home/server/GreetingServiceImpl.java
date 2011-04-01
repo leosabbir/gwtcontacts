@@ -3,6 +3,7 @@ package com.home.server;
 
 import java.util.List;
 
+import com.home.server.entities.ContactDetailsEntity;
 import com.home.server.service.IContactsService;
 import com.home.shared.FieldVerifier;
 import com.home.shared.entities.ContactDetails;
@@ -27,7 +28,7 @@ public class GreetingServiceImpl implements IGreetingService {
 		test.setMobile("9841753847");
 		test.setName("Bishwa");
 		this.contactService.save(test);
-		Object obj = this.contactService.findByProductCode(1);
+		Object obj = this.contactService.findContact(1);
 		this.contactService.delete(3);
 		List<ContactDetails> allContacts = this.contactService.getAllContacts();
 		if (!FieldVerifier.isValidName(input)) {

@@ -8,41 +8,42 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.home.server.dao.ITestDao;
+import com.home.server.dao.IContactsDao;
+import com.home.server.entities.ContactDetailsEntity;
 import com.home.shared.entities.ContactDetails;
 
 @Repository
-public class TestDao implements ITestDao{
+public class ContactsDao implements IContactsDao{
 
 	private HibernateTemplate hibernateTemplate;
 
-    public TestDao(SessionFactory sessionFactory) {
+    public ContactsDao(SessionFactory sessionFactory) {
         hibernateTemplate = new HibernateTemplate(sessionFactory);
     }
 	
 	@Override
-	public boolean delete(ContactDetails test) {
+	public boolean delete(ContactDetailsEntity test) {
 		this.hibernateTemplate.delete(test);
 		return true;
 		
 	}
 
 	@Override
-	public ContactDetails findByProductCode(int code) {
+	public ContactDetailsEntity findContact(int code) {
 		//List obj = hibernateTemplate.find("select t.id, t.name, t.mobile, t.address from test as t where id = ?1", code);
 		//Test test = new Test(obj["name"], obj["mobile"], obj["address"]);
-		ContactDetails contact = (ContactDetails) this.hibernateTemplate.get("com.home.shared.entities.ContactDetails", code);
+		ContactDetailsEntity contact = (ContactDetailsEntity) this.hibernateTemplate.get("com.home.server.entities.ContactDetailsEntity", code);
 		return contact; 
 	}
 
 	@Override
-	public boolean save(ContactDetails test) {
+	public boolean save(ContactDetailsEntity test) {
 		hibernateTemplate.saveOrUpdate(test);
 		return true;
 	}
 
 	@Override
-	public boolean update(ContactDetails test) {
+	public boolean update(ContactDetailsEntity test) {
 		this.hibernateTemplate.update(test);
 		return true;
 		
@@ -50,9 +51,9 @@ public class TestDao implements ITestDao{
 
 	@Override
 	@Transactional
-	public List<ContactDetails> getAllContacts() {
+	public List<ContactDetailsEntity> getAllContacts() {
 		//return hibernateTemplate.getSessionFactory().getCurrentSession().createQuery("from test").list();
-		return hibernateTemplate.find("from ContactDetails");
+		return hibernateTemplate.find("from ContactDetailsEntity");
 		
 	}
 
