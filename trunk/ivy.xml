@@ -4,10 +4,16 @@
 	xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
 
 	<info organisation="home" module="gwtContacts" status="integration"/>
+	
 	<configurations>
-		<conf name="compile"/>
-		<conf name="runtime"/>
+			<conf name="compile"/>
+			<conf name="compile-gwt"/>
+			<conf name="provided"/>
+			<conf name="runtime" extends="compile"/>
+			<conf name="test"/>
 	</configurations>
+	<publications>
+	</publications>
 	
 	
 	<dependencies>
