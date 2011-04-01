@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
+import com.home.server.entities.ContactDetailsEntity;
 import com.home.shared.entities.ContactDetails;
 
 @RemoteServiceRelativePath("contact.rpc")
@@ -14,4 +15,5 @@ public interface IContactService extends RemoteService {
 	boolean deleteContact(int contactId);
 	ContactDetails findContact(int contactId);
 	List<ContactDetails> getAllContacts();
+	ContactDetails getContact(int contactId);
 }

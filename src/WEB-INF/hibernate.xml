@@ -27,7 +27,7 @@
         
         <property name="annotatedClasses">
             <list>
-                <value>com.home.shared.entities.ContactDetails</value>
+                <value>com.home.server.entities.ContactDetailsEntity</value>
             </list>
         </property>
 		

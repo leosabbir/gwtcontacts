@@ -9,6 +9,7 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.home.client.services.ServiceProvider;
 import com.home.client.view.IMainView;
 import com.home.client.view.IMainView.Presenter;
+import com.home.server.entities.ContactDetailsEntity;
 import com.home.shared.entities.ContactDetails;
 
 public class MainActivity extends AbstractActivity implements Presenter {
@@ -24,8 +25,9 @@ public class MainActivity extends AbstractActivity implements Presenter {
 		mainView.setPresenter(this);
 		panel.setWidget(mainView);
 		
-		//getAllContacts();
-		getContactDetails(19);
+		getAllContacts();
+		//getContactDetails(19);
+		//getTest(19);
 	}
 
 	@Override
@@ -63,6 +65,23 @@ public class MainActivity extends AbstractActivity implements Presenter {
 			}
 		});
 		return null;
+	}
+	
+	public void getTest(int id){
+		ServiceProvider.getInstance().getContactService().getContact(id, new AsyncCallback<ContactDetails>() {
+
+			@Override
+			public void onFailure(Throwable caught) {
+				System.out.println(caught.toString());
+				
+			}
+
+			@Override
+			public void onSuccess(ContactDetails result) {
+				System.out.println(result.toString());
+				
+			}
+		});
 	}
 
 }

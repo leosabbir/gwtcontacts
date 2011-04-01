@@ -23,5 +23,4 @@
 	<replace-with class="com.home.client.view.impl.ClientFactoryImpl">
 		<when-type-is class="com.home.client.view.ClientFactory"/>
 	</replace-with>
-
 </module>
