@@ -13,10 +13,12 @@ public interface IMainView extends IsWidget {
 	
 	void setContactsTable(List<ContactDetails> allContactDetails);
 	
+	void showSelectedContactDetail(ContactDetails contactDetails);
+	
 	public interface Presenter{
 		List<ContactDetails> getAllContacts();
 		ContactDetails getContactDetails(int id);
+		void handleContactSelectionChange(ContactDetails contactDetails);
 		
 	}
-
 }

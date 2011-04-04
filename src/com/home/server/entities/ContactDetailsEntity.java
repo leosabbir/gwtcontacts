@@ -13,6 +13,7 @@ import com.google.gwt.user.client.rpc.IsSerializable;
 public class ContactDetailsEntity implements IsSerializable {
 	private static final long serialVersionUID = 1L;
 	private Integer userId;
+	private String emailId;
 	private String name;
 	private String mobile;
 	private String address;
@@ -57,5 +58,15 @@ public class ContactDetailsEntity implements IsSerializable {
 	
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	@Column(name="emailid")
+	public String getEmailId() {
+		return emailId;
 	}
 }

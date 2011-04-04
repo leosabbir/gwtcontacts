@@ -20,7 +20,7 @@ public class RegistrationModel {
 	@Email
 	private String email;
 
-	//private String keyCode;
+	private String keyCode;
 
 	@NotNull
 	@NotEmpty
@@ -42,13 +42,13 @@ public class RegistrationModel {
 		this.email = email;
 	}
 
-//	public String getKeyCode() {
-//		return keyCode;
-//	}
-//
-//	public void setKeyCode(String keyCode) {
-//		this.keyCode = keyCode;
-//	}
+	public String getKeyCode() {
+		return keyCode;
+	}
+
+	public void setKeyCode(String keyCode) {
+		this.keyCode = keyCode;
+	}
 
 	public void setUserName(String userName) {
 		this.userName = userName;
