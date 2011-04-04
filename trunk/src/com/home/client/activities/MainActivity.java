@@ -84,4 +84,10 @@ public class MainActivity extends AbstractActivity implements Presenter {
 		});
 	}
 
+	@Override
+	public void handleContactSelectionChange(ContactDetails contactDetails) {
+		this.mainView.showSelectedContactDetail(contactDetails);
+		
+	}
+
 }

@@ -9,6 +9,8 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Widget;
 import com.home.client.view.IMainView;
+import com.home.client.view.components.ContactDetailsView;
+import com.home.client.view.components.ContactsView;
 import com.home.shared.entities.ContactDetails;
 
 public class MainView extends Composite implements IMainView {
@@ -19,11 +21,17 @@ public class MainView extends Composite implements IMainView {
 	interface MainViewUiBinder extends UiBinder<Widget, MainView> {
 	}
 	
+//	@UiField
+//	public FlexTable allContactsHeader;
+//
+//	@UiField
+//	public FlexTable allContactsBody;
+	
 	@UiField
-	public FlexTable allContactsHeader;
-
+	ContactsView contactsTable;
+	
 	@UiField
-	public FlexTable allContactsBody;
+	ContactDetailsView contactDetailView;
 
 
 	public MainView() {
@@ -33,7 +41,7 @@ public class MainView extends Composite implements IMainView {
 
 	@Override
 	public void initAllContactsTable() {
-		allContactsBody.setCellSpacing(0);
+		/*allContactsBody.setCellSpacing(0);
 		//allContactsBodyHeader.setCellPadding(3);
 
 		allContactsBody.setWidth("100%");
@@ -50,26 +58,34 @@ public class MainView extends Composite implements IMainView {
 		allContactsHeader.setText(0, 2, "Mobile");
 		//		allContactsHeader.getCellFormatter().setWidth(0, 2, "40%");
 		//		allContactsBody.getCellFormatter().setWidth(0, 2, "40%");
-
+*/
 		
 	}
 	
 	@Override
 	public void setPresenter(Presenter presenter) {
 		this.presenter = presenter;
+		this.contactsTable.setPresenter(presenter);
 		
 	}
 
 	@Override
 	public void setContactsTable(List<ContactDetails> allContactDetails) {
-		int row = 0;
+		/*int row = 0;
 		for (ContactDetails contactDetail : allContactDetails) {
 				allContactsBody.setText(row, 0, contactDetail.getName());
 				allContactsBody.setText(row, 1, contactDetail.getAddress());
 				allContactsBody.setText(row, 2, contactDetail.getMobile());
 
 				row++;
-		}
+		}*/
+		
+		this.contactsTable.setTableData(allContactDetails);
+	}
+	
+	@Override
+	public void showSelectedContactDetail(ContactDetails contactDetails){
+		this.contactDetailView.setData(contactDetails);
 	}
 
 }

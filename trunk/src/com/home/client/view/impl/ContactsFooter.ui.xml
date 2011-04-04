@@ -5,8 +5,16 @@
 		.important {
 			font-weight: bold;
 		}
+		
+		.footer{
+			background-color: #8b8cbc;
+			margin: 0px auto;
+			height: 60px;
+			width: 90%;	
+		}
+		
 	</ui:style>
-	<g:HTMLPanel>
+	<g:HTMLPanel styleName="{style.footer}">
 		<g:Label styleName="{style.important}" text="Contacts Footer" />
 	</g:HTMLPanel>
 </ui:UiBinder> 

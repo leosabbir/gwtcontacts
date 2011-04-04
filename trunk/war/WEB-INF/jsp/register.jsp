@@ -60,7 +60,7 @@
 							</tr>
 							<tr>
 								<td>&nbsp;</td>
-								<td><a class="link" href="/password"><spring:message code="authentication.login.link.password"/></a></td>
+								<td><a class="link" href="/password">password</a></td>
 							</tr>
 						</table>
 			</form:form>
