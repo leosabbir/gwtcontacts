@@ -1,0 +1,5 @@
+CREATE TABLE `contacts`.`test` (
+  `test` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`test`)
+)
+ENGINE = InnoDB;
