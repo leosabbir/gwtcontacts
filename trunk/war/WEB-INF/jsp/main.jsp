@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link type="text/css" rel="stylesheet" href="Contacts.css">
 <title>Contacts by Sabbir</title>
 
 <script type="text/javascript" language="javascript"
@@ -15,6 +14,7 @@
 <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
     
    <a href="/test">test</a>
+   <li><a href="/logout">Log Out</a></li>
 
     <table align="center">
       <tr>
