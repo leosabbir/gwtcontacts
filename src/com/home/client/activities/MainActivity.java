@@ -11,6 +11,7 @@ import com.home.client.view.IMainView;
 import com.home.client.view.IMainView.Presenter;
 import com.home.server.entities.ContactDetailsEntity;
 import com.home.shared.entities.ContactDetails;
+import com.home.shared.entities.ContactNameId;
 
 public class MainActivity extends AbstractActivity implements Presenter {
 
@@ -32,11 +33,11 @@ public class MainActivity extends AbstractActivity implements Presenter {
 
 	@Override
 	public List<ContactDetails> getAllContacts() {
-		ServiceProvider.getInstance().getContactService().getAllContacts( new AsyncCallback<List<ContactDetails>>() {
+		ServiceProvider.getInstance().getContactService().getAllContacts( new AsyncCallback<List<ContactNameId>>() {
 			
 			@Override
-			public void onSuccess(List<ContactDetails> allContactDetails) {
-				mainView.setContactsTable(allContactDetails);
+			public void onSuccess(List<ContactNameId> allContactDetails) {
+				mainView.setContactsList(allContactDetails);
 			}
 			
 			@Override
@@ -85,9 +86,31 @@ public class MainActivity extends AbstractActivity implements Presenter {
 	}
 
 	@Override
-	public void handleContactSelectionChange(ContactDetails contactDetails) {
-		this.mainView.showSelectedContactDetail(contactDetails);
-		
+	public void handleContactSelectionChange(int userId) {
+		ServiceProvider.getInstance().getContactService().getContact(userId, new AsyncCallback<ContactDetails>() {
+
+			@Override
+			public void onFailure(Throwable caught) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onSuccess(ContactDetails result) {
+				mainView.showSelectedContactDetail(result);
+				
+			}
+		});
+	}
+
+	@Override
+	public void selfViewSelected() {
+		this.mainView.showSelfView();
+	}
+
+	@Override
+	public void contactsViewSelected() {
+		this.mainView.showContactsView();		
 	}
 
 }

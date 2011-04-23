@@ -15,7 +15,6 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-logging-1.0.4.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/ejb3-persistence.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/gwt-servlet.jar" sourcepath="C:/Users/DELL/.ivy2/cache/com.google.gwt/gwt-user/sources/gwt-user-2.2.0-sources.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/hibernate-annotations.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/hibernate-commons-annotations.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/hibernate-core.jar"/>
@@ -44,6 +43,15 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-security-config-3.1.0.RC1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-security-core-3.1.0.RC1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-security-web-3.1.0.RC1.jar"/>
-	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/Libraries/gwt-2.2.0/gwt-user.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/D:/Libraries/gwt-2.2.0/doc/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Libraries/gwt-2.2.0/gwt-dev.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/D:/Libraries/gwt-2.2.0/doc/javadoc/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

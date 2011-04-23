@@ -10,8 +10,11 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Widget;
 import com.home.client.view.IMainView;
 import com.home.client.view.components.ContactDetailsView;
+import com.home.client.view.components.ContactsList;
 import com.home.client.view.components.ContactsView;
+import com.home.client.view.components.MainList;
 import com.home.shared.entities.ContactDetails;
+import com.home.shared.entities.ContactNameId;
 
 public class MainView extends Composite implements IMainView {
 
@@ -27,65 +30,56 @@ public class MainView extends Composite implements IMainView {
 //	@UiField
 //	public FlexTable allContactsBody;
 	
+//	@UiField
+//	ContactsView contactsTable;
+//	
+
 	@UiField
-	ContactsView contactsTable;
+	MainList mainList;
+	
+	@UiField
+	ContactsList contactsList;
 	
 	@UiField
 	ContactDetailsView contactDetailView;
 
-
 	public MainView() {
 		initWidget(uiBinder.createAndBindUi(this));
-		initAllContactsTable();
+		this.contactsList.setVisible(false);
 	}
 
-	@Override
-	public void initAllContactsTable() {
-		/*allContactsBody.setCellSpacing(0);
-		//allContactsBodyHeader.setCellPadding(3);
-
-		allContactsBody.setWidth("100%");
-		allContactsHeader.setWidth("100%");
-
-		allContactsHeader.setText(0, 0, "Name");
-		allContactsHeader.getCellFormatter().setWidth(0, 0, "100px");
-		allContactsBody.getCellFormatter().setWidth(0, 0, "101px");
-
-		allContactsHeader.setText(0, 1, "Address");
-		allContactsHeader.getCellFormatter().setWidth(0, 1, "100px");
-		allContactsBody.getCellFormatter().setWidth(0, 1, "100px");
-
-		allContactsHeader.setText(0, 2, "Mobile");
-		//		allContactsHeader.getCellFormatter().setWidth(0, 2, "40%");
-		//		allContactsBody.getCellFormatter().setWidth(0, 2, "40%");
-*/
-		
-	}
-	
 	@Override
 	public void setPresenter(Presenter presenter) {
 		this.presenter = presenter;
-		this.contactsTable.setPresenter(presenter);
+		//this.contactsTable.setPresenter(presenter);
+		this.mainList.setPresenter(presenter);
+		this.contactsList.setPresenter(presenter);
 		
 	}
 
 	@Override
-	public void setContactsTable(List<ContactDetails> allContactDetails) {
-		/*int row = 0;
-		for (ContactDetails contactDetail : allContactDetails) {
-				allContactsBody.setText(row, 0, contactDetail.getName());
-				allContactsBody.setText(row, 1, contactDetail.getAddress());
-				allContactsBody.setText(row, 2, contactDetail.getMobile());
-
-				row++;
-		}*/
-		
-		this.contactsTable.setTableData(allContactDetails);
+	public void setContactsList(List<ContactNameId> allContactDetails) {
+		//this.contactsTable.setTableData(allContactDetails);
+		this.contactsList.setTableData(allContactDetails);
 	}
 	
 	@Override
 	public void showSelectedContactDetail(ContactDetails contactDetails){
 		this.contactDetailView.setData(contactDetails);
+	}
+
+	@Override
+	public void showSelfView() {
+		this.mainList.InvertSelection();
+		this.contactsList.setVisible(false);
+		
+	}
+
+	@Override
+	public void showContactsView() {
+		this.mainList.InvertSelection();
+		this.contactsList.setVisible(true);
+		
 	}
 
 }

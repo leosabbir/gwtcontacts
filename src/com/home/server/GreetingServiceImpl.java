@@ -7,6 +7,7 @@ import com.home.server.entities.ContactDetailsEntity;
 import com.home.server.service.IContactsService;
 import com.home.shared.FieldVerifier;
 import com.home.shared.entities.ContactDetails;
+import com.home.shared.entities.ContactNameId;
 import com.home.shared.services.IGreetingService;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -30,7 +31,7 @@ public class GreetingServiceImpl implements IGreetingService {
 		this.contactService.save(test);
 		Object obj = this.contactService.findContact(1);
 		this.contactService.delete(3);
-		List<ContactDetails> allContacts = this.contactService.getAllContacts();
+		List<ContactNameId> allContacts = this.contactService.getAllContacts();
 		if (!FieldVerifier.isValidName(input)) {
 			// If the input is not valid, throw an IllegalArgumentException back to
 			// the client.

@@ -12,6 +12,7 @@ import com.home.server.dao.IContactsDao;
 import com.home.server.entities.ContactDetailsEntity;
 import com.home.server.service.IContactsService;
 import com.home.shared.entities.ContactDetails;
+import com.home.shared.entities.ContactNameId;
 
 @Service
 public class ContactsService implements IContactsService {
@@ -69,19 +70,17 @@ public class ContactsService implements IContactsService {
 	}
 
 	@Override
-	public List<ContactDetails> getAllContacts() {
+	public List<ContactNameId> getAllContacts() {
 		System.out.println(SecurityContextHolder.getContext().getAuthentication().getName());
-		ContactDetails contactDetails;
-		List<ContactDetails> contactDetailList = new ArrayList<ContactDetails>();
+		ContactNameId contact;
+		List<ContactNameId> contactDetailList = new ArrayList<ContactNameId>();
 		
 		for(ContactDetailsEntity contactDetailsEntity : this.contactDao.getAllContacts()){
-			contactDetails = new ContactDetails();
-			contactDetails.setName(contactDetailsEntity.getName());
-			contactDetails.setAddress(contactDetailsEntity.getAddress());
-			contactDetails.setMobile(contactDetailsEntity.getMobile());
-			contactDetails.setUserid(contactDetailsEntity.getId());
+			contact = new ContactNameId();
+			contact.setName(contactDetailsEntity.getName());
+			contact.setUserid(contactDetailsEntity.getId());
 			
-			contactDetailList.add(contactDetails);
+			contactDetailList.add(contact);
 		}
 		return contactDetailList;
 	}
