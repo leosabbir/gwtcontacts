@@ -7,10 +7,11 @@
 			font-weight: bold;
 		}
 	</ui:style>
-	<g:FlowPanel>
-<!--		<g:FlexTable ui:field="allContactsHeader"/>-->
-<!--		<g:FlexTable ui:field="allContactsBody"/>-->
-		<contact:ContactsView ui:field="contactsTable"></contact:ContactsView>
+	<g:HorizontalPanel>
+<!-- 		<contact:ContactsView ui:field="contactsTable"></contact:ContactsView> -->
+<!-- 		 -->
+		<contact:MainList ui:field="mainList"></contact:MainList>
+		<contact:ContactsList ui:field="contactsList"></contact:ContactsList>
 		<contact:ContactDetailsView ui:field="contactDetailView"></contact:ContactDetailsView>
-	</g:FlowPanel>
+	</g:HorizontalPanel>
 </ui:UiBinder> 

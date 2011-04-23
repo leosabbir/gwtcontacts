@@ -20,11 +20,11 @@
 		    <security:intercept-url pattern="/**" access="ROLE_USER" />
 		 
 		    <!-- Set the login page and what to do if login fails -->
-		    <security:form-login login-page="/login" authentication-failure-url="/login.jsp?login_error=1" />
+		    <security:form-login login-page="/login" authentication-failure-url="/login.jsp?login_error=1"/>
 		 
 		    <!-- Set the logout page and where to go after logout is successful -->
 <!--		    <security:logout logout-url="/j_spring_security_logout" logout-success-url="/" />-->
-			<security:logout logout-url="/logout" logout-success-url="/" />
+			<security:logout logout-url="/logout" logout-success-url="/login" />
 			
 			<security:remember-me key="contacts"/>
 		</security:http>

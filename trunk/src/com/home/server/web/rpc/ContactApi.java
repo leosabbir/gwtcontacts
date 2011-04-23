@@ -5,6 +5,7 @@ import java.util.List;
 import com.home.server.entities.ContactDetailsEntity;
 import com.home.server.service.IContactsService;
 import com.home.shared.entities.ContactDetails;
+import com.home.shared.entities.ContactNameId;
 import com.home.shared.services.IContactService;
 
 public class ContactApi implements IContactService {
@@ -33,8 +34,8 @@ public class ContactApi implements IContactService {
 	}
 
 	@Override
-	public List<ContactDetails> getAllContacts() {
-		List<ContactDetails> details = contactsService.getAllContacts(); 
+	public List<ContactNameId> getAllContacts() {
+		List<ContactNameId> details = contactsService.getAllContacts(); 
 		return details;
 	}
 

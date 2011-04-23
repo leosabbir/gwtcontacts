@@ -84,6 +84,6 @@ public class ContactsView extends Composite implements Handler{
 
 	@Override
 	public void onSelectionChange(SelectionChangeEvent event) {
-		this.presenter.handleContactSelectionChange(this.sinlgeSelectionModel.getSelectedObject());
+		//this.presenter.handleContactSelectionChange(this.sinlgeSelectionModel.getSelectedObject());
 	}
 }

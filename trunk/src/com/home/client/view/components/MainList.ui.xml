@@ -5,17 +5,9 @@
 		.important {
 			font-weight: bold;
 		}
-		
-		.header{
-			background-color: #8b8cbc;
-			margin: 0px auto;
-			height: 60px;
-			width: 90%;	
-		}
-		
 	</ui:style>
-	<g:HTMLPanel styleName="{style.header}">
-		<g:Label styleName="{style.important}" text="Contacts Header" />
-		<g:Label ui:field="userName"></g:Label>
+	<g:HTMLPanel>
+		<div><g:Anchor ui:field="self">Yourself</g:Anchor></div>
+		<g:Anchor ui:field="contacts">Contacts</g:Anchor>
 	</g:HTMLPanel>
 </ui:UiBinder> 

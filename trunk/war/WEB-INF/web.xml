@@ -5,7 +5,7 @@
 
 <web-app>
   
-  <listener>
+	<listener>
 		<listener-class>
 			org.springframework.web.context.ContextLoaderListener
 		</listener-class>

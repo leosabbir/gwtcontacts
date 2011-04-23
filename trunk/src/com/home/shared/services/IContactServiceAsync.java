@@ -5,6 +5,7 @@ import java.util.List;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.home.server.entities.ContactDetailsEntity;
 import com.home.shared.entities.ContactDetails;
+import com.home.shared.entities.ContactNameId;
 
 
 /**
@@ -16,6 +17,6 @@ public interface IContactServiceAsync {
 	void update(ContactDetails contact, AsyncCallback<Boolean> callBack);
 	void deleteContact(int contactId, AsyncCallback<Boolean> callBack);
 	void findContact(int contactid, AsyncCallback<ContactDetails> callBack);
-	void getAllContacts(AsyncCallback<List<ContactDetails>> callBack);
+	void getAllContacts(AsyncCallback<List<ContactNameId>> callBack);
 	void getContact(int contactId, AsyncCallback<ContactDetails> callback);
 }
