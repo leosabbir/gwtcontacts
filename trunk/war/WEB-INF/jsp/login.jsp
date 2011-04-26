@@ -1,10 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix='c' uri='http://java.sun.com/jstl/core_rt' %>
-<%@ page import="org.springframework.security.core.AuthenticationException" %>    
+<%@ page import="org.springframework.security.core.AuthenticationException" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>    
 
 <jsp:useBean id="msg" type="java.lang.String" scope="request"/>
+<jsp:useBean id="action" type="java.lang.String" scope="request"/>
 
 <html>
   <head>
@@ -21,7 +22,7 @@
       </font>
     </c:if>
  
-    <form name="f" action="<c:url value='j_spring_security_check'/>" method="POST">
+    <form:form name="f" action="${action}" method="POST">
       <table>
         <tr><td>User:</td><td><input type='text' name='j_username' value='<c:if test="${not empty param.login_error}"><c:out value="${SPRING_SECURITY_LAST_USERNAME}"/></c:if>'/></td></tr>
         <tr><td>Password:</td><td><input type='password' name='j_password'></td></tr>
@@ -31,6 +32,6 @@
         <tr><td colspan='2'><input name="reset" type="reset"></td></tr>
         <tr><td colspan='2'><a href="/register">Register</a></td></tr>
       </table>
-    </form>
+    </form:form>
   </body>
 </html>
