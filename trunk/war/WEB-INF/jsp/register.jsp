@@ -14,8 +14,7 @@
 			<div class="header">
 				Register at Contacts
 			</div>
-			<form:form modelAttribute="registrationModel" action="/register"
-				method="POST">
+			<form:form modelAttribute="registrationModel" action="/register" method="POST">
 						<table class="registerTable">
 							<spring:hasBindErrors name="registrationModel">
 								<tr>
@@ -28,7 +27,7 @@
 							<tr>
 								<td><form:label	for="name" path="userName">User Name:<font color="red" text-align="left">*</font></form:label></td>
 								<td><form:input path="userName" cssClass="text" /></td>
-								
+								<td><form:errors path="userName"></form:errors></td>
 							</tr>
 							<tr>
 								<td><form:label	for="name" path="email">Email:</form:label></td>
