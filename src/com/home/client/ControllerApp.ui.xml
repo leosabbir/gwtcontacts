@@ -9,7 +9,7 @@
 	</ui:style>
 	<g:HTMLPanel>
 		<v:ContactsHeader></v:ContactsHeader>
-		<g:SimplePanel ui:field="centerContainer" />
+		<g:SimplePanel ui:field="centerContainer" styleName="centerContainer"/>
 		<v:ContactsFooter></v:ContactsFooter>
 	</g:HTMLPanel>
 </ui:UiBinder> 

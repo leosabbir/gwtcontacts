@@ -16,6 +16,8 @@ import com.google.gwt.user.client.ui.SimplePanel;
 import com.home.client.mvp.ContactsActivityMapper;
 import com.home.client.mvp.ContactsPlaceHistoryMapper;
 import com.home.client.places.MainPlace;
+import com.home.client.resources.ContactsCssResource;
+import com.home.client.resources.ContactsResources;
 import com.home.client.view.ClientFactory;
 
 public class ControllerApp implements EntryPoint {
@@ -32,6 +34,8 @@ public class ControllerApp implements EntryPoint {
 	
 	@Override
 	public void onModuleLoad() {
+		ContactsResources.INSTANCE.contactsCss().ensureInjected();
+		
 		this.application = uiBinder.createAndBindUi(this);
 		RootPanel.get().add(application);
 
