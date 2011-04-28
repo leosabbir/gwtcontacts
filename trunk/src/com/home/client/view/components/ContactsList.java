@@ -10,6 +10,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
+import com.google.gwt.user.cellview.client.RowStyles;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
@@ -18,6 +19,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.SelectionChangeEvent;
 import com.google.gwt.view.client.SingleSelectionModel;
 import com.google.gwt.view.client.SelectionChangeEvent.Handler;
+import com.home.client.resources.CellTableResources;
 import com.home.client.view.IMainView.Presenter;
 import com.home.shared.entities.ContactDetails;
 import com.home.shared.entities.ContactNameId;
@@ -32,12 +34,15 @@ public class ContactsList extends Composite implements Handler {
 	
 	private Presenter presenter;
 
-	@UiField
+	@UiField(provided = true)
 	CellTable<ContactNameId> contactsList;
 	private SingleSelectionModel<ContactNameId> sinlgeSelectionModel;
 	
 	public ContactsList() {
+		CellTableResources resource = (CellTableResources)GWT.create(CellTableResources.class);
+		contactsList = new CellTable<ContactNameId>(100, resource);
 		initWidget(uiBinder.createAndBindUi(this));
+		
 		initColumns();
 		
 		this.sinlgeSelectionModel = this.createSelectionModel();
@@ -69,6 +74,19 @@ public class ContactsList extends Composite implements Handler {
 		};
 		
 		contactsList.addColumn(nameColumn);
+		
+//		contactsList.setRowStyles(new RowStyles<ContactNameId>() {
+//				@Override
+//				public String getStyleNames(ContactNameId row, int rowIndex) {
+//					if (contactsList.getSelectionModel().isSelected(row)) {
+//						return "listrow-selected-active";
+//					} else if (rowIndex % 2 == 0) {
+//						return "cellTableEvenRow";
+//					} else {
+//						return "cellTableOddRow";//"listrow";
+//					}
+//				}
+//			});
 	}
 
 

@@ -6,7 +6,7 @@
 			font-weight: bold;
 		}
 	</ui:style>
-	<g:HTMLPanel>
+	<g:HTMLPanel styleName="mainListContainer">
 		<div><g:Anchor ui:field="self">Yourself</g:Anchor></div>
 		<g:Anchor ui:field="contacts">Contacts</g:Anchor>
 	</g:HTMLPanel>

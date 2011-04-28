@@ -1,0 +1,29 @@
+
+
+.centerContainer{
+	width: 80%;
+	margin: 0px auto;
+	margin-top: 10px;
+	margin-bottom: 10px;	
+}
+
+.mainListContainer {
+	width: 100px;
+	font-weight: bolder;
+	text-align: center;
+}
+
+.contactListHeader {
+	background-color: #7879b1;
+	width: 60px;
+	height: 23px;
+	line-height: 23px;
+	padding-left: 5px;
+	-moz-border-radius: 5px 5px 0px 0px;
+}
+
+.contactListBody {
+	width: 125px;
+	background-color: #595b9b;
+	margin: 0px 10px;
+}
