@@ -28,11 +28,10 @@
 			
 			<security:remember-me key="contacts"/>
 		</security:http>
-		 
+		
 <!--		 Configure the authentication provider -->
 		<security:authentication-manager alias="authenticationManager">
-			<security:authentication-provider>
-		 	   <security:jdbc-user-service data-source-ref="dataSource" />
+			<security:authentication-provider user-service-ref="customUserDetailsService">
 			</security:authentication-provider>
 		</security:authentication-manager>
 
@@ -44,5 +43,8 @@
 <!--    		</security:authentication-provider>-->
 <!--  		</security:authentication-manager> -->
 
+	<beans:bean id="customUserDetailsService" class="com.home.server.service.impl.UsernamePasswordAuthenticationServiceImpl">
+   			<beans:property name="dataSource" ref="dataSource" />
+	</beans:bean>
 
 </beans:beans>
