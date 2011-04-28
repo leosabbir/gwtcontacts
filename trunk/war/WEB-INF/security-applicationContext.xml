@@ -31,7 +31,8 @@
 		
 <!--		 Configure the authentication provider -->
 		<security:authentication-manager alias="authenticationManager">
-			<security:authentication-provider user-service-ref="customUserDetailsService">
+			<security:authentication-provider user-service-ref="userDetailsService">
+				<security:password-encoder ref="passwordEncoder"/>
 			</security:authentication-provider>
 		</security:authentication-manager>
 
@@ -43,8 +44,16 @@
 <!--    		</security:authentication-provider>-->
 <!--  		</security:authentication-manager> -->
 
-	<beans:bean id="customUserDetailsService" class="com.home.server.service.impl.UsernamePasswordAuthenticationServiceImpl">
+	<beans:bean id="userDetailsService" class="com.home.server.service.impl.UsernamePasswordAuthenticationServiceImpl">
    			<beans:property name="dataSource" ref="dataSource" />
 	</beans:bean>
+	
+	<beans:bean class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" id="passwordEncoder"/>
+	
+	
+<!-- 	To Encode non encoded passwords -->
+<!-- 	<beans:bean class="com.home.server.security.DatabasePasswordSecurerBean" init-method="secureDatabase" depends-on="dataSource"> -->
+<!-- 		<beans:property name="dataSource" ref="dataSource"/> -->
+<!-- 	</beans:bean> -->
 
 </beans:beans>
