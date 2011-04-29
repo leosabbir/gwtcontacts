@@ -33,7 +33,7 @@ public class Principal implements IsSerializable {
 		this.username = username;
 	}
 	
-	@Column(name="name")
+	@Column(name="username")
 	public String getUserName() {
 		return username;
 	}
