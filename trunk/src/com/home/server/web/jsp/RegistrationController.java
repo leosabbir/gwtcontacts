@@ -66,6 +66,11 @@ public class RegistrationController {
 //			return "register";
 //		}
 
+		if (registrationModel.getPassword().trim().equals("")) {
+			result.rejectValue("password", "NotEmpty.registrationModel.password");
+			return "register";
+		}
+		
 		if (!registrationModel.getPassword().equals(registrationModel.getConfirmPassword())) {
 			result.rejectValue("confirmPassword", "NoMatch.registrationModel.confirmPassword");
 			return "register";

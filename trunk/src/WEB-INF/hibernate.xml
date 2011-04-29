@@ -28,6 +28,9 @@
         <property name="annotatedClasses">
             <list>
                 <value>com.home.server.entities.ContactDetailsEntity</value>
+                <value>com.home.server.entities.Contacts</value>
+                <value>com.home.server.entities.UserContacts</value>
+                <value>com.home.server.entities.Principal</value>
             </list>
         </property>
 		
@@ -48,6 +51,8 @@
 				<prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop> 
             </props>
         </property>
+        
+        <property name="schemaUpdate" value="true"/>
     </bean>
     
 <!--    <tx:annotation-driven />-->
