@@ -5,5 +5,5 @@ import com.home.server.web.model.RegistrationModel;
 
 public interface IRegistrationService {
 
-	void registerUser(RegistrationModel model) throws AuthenticationException;
+	void registerUser(RegistrationModel registrationModel) throws AuthenticationException;
 }

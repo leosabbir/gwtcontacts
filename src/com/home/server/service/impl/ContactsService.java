@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.home.server.dao.IContactsDao;
 import com.home.server.entities.ContactDetailsEntity;
+import com.home.server.entities.Contacts;
 import com.home.server.service.IContactsService;
 import com.home.shared.entities.ContactDetails;
 import com.home.shared.entities.ContactNameId;
@@ -27,10 +28,10 @@ public class ContactsService implements IContactsService {
 	
 	@Override
 	@Transactional
-	public boolean delete(int id) {
-		ContactDetailsEntity test = this.contactDao.findContact(id);
-		if(test != null){
-			return this.contactDao.delete(test);
+	public boolean deleteContact(int id) {
+		Contacts contact = this.contactDao.findContact(id);
+		if(contact != null){
+			return this.contactDao.deleteContact(contact);
 		}
 		return false;
 	}
@@ -39,11 +40,11 @@ public class ContactsService implements IContactsService {
 	@Transactional
 	public ContactDetails findContact(int userId) {
 		ContactDetails contactDetails = new ContactDetails();
-		ContactDetailsEntity contactDetailsEntity = this.contactDao.findContact(userId);
+		Contacts contacts = this.contactDao.findContact(userId);
 		
-		contactDetails.setName(contactDetailsEntity.getName());
-		contactDetails.setAddress(contactDetailsEntity.getAddress());
-		contactDetails.setMobile(contactDetailsEntity.getMobile());
+		contactDetails.setName(contacts.getFirstName());
+		contactDetails.setAddress(contacts.getAddress());
+		contactDetails.setMobile(contacts.getMobile());
 		contactDetails.setUserid(userId);
 		
 		return contactDetails; 
@@ -51,21 +52,21 @@ public class ContactsService implements IContactsService {
 
 	@Override
 	@Transactional
-	public boolean save(ContactDetails contactDetails) {
-		ContactDetailsEntity contactDetailsEntity = new ContactDetailsEntity();
+	public boolean saveContact(ContactDetails contactDetails) {
+		Contacts contacts = new Contacts();
 		
-		contactDetailsEntity.setName(contactDetails.getName());
-		contactDetailsEntity.setAddress(contactDetails.getAddress());
-		contactDetailsEntity.setMobile(contactDetails.getMobile());
+		contacts.setFirstName(contactDetails.getName());
+		contacts.setAddress(contactDetails.getAddress());
+		contacts.setMobile(contactDetails.getMobile());
 		
-		return this.contactDao.save(contactDetailsEntity);
+		return this.contactDao.saveContact(contacts);
 	}
 
 	@Override
-	public boolean update(ContactDetails test) {
-		ContactDetailsEntity updated = this.contactDao.findContact(test.getUserid());
+	public boolean updateContact(ContactDetails test) {
+		Contacts updated = this.contactDao.findContact(test.getUserid());
 		updated.setAddress(test.getAddress());
-		return this.contactDao.update(updated);
+		return this.contactDao.updateContact(updated);
 		
 	}
 
@@ -75,10 +76,10 @@ public class ContactsService implements IContactsService {
 		ContactNameId contact;
 		List<ContactNameId> contactDetailList = new ArrayList<ContactNameId>();
 		
-		for(ContactDetailsEntity contactDetailsEntity : this.contactDao.getAllContacts()){
+		for(Contacts contacts : this.contactDao.getAllContacts()){
 			contact = new ContactNameId();
-			contact.setName(contactDetailsEntity.getName());
-			contact.setUserid(contactDetailsEntity.getId());
+			contact.setName(contacts.getFirstName());
+			contact.setUserid(contacts.getContactId());
 			
 			contactDetailList.add(contact);
 		}
