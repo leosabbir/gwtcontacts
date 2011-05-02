@@ -18,7 +18,7 @@ public class ContactApi implements IContactService {
 	
 	@Override
 	public boolean addContact(ContactDetails contact) {
-		return contactsService.save(contact);
+		return contactsService.saveContact(contact);
 	}
 
 	@Override

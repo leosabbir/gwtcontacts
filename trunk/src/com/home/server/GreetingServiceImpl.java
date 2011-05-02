@@ -28,9 +28,9 @@ public class GreetingServiceImpl implements IGreetingService {
 		test.setAddress("Bhaktapur");
 		test.setMobile("9841753847");
 		test.setName("Bishwa");
-		this.contactService.save(test);
+		//this.contactService.save(test);
 		Object obj = this.contactService.findContact(1);
-		this.contactService.delete(3);
+		//this.contactService.delete(3);
 		List<ContactNameId> allContacts = this.contactService.getAllContacts();
 		if (!FieldVerifier.isValidName(input)) {
 			// If the input is not valid, throw an IllegalArgumentException back to

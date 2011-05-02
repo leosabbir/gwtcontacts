@@ -22,7 +22,7 @@ public class DatabasePasswordSecurerBean extends JdbcDaoSupport {
 	private UserDetailsService userDetailsService;
 	
 	public void secureDatabase() {
-		getJdbcTemplate().query("select username, password from users", new RowCallbackHandler(){
+		getJdbcTemplate().query("select username, password from principal", new RowCallbackHandler(){
 			@Override
 			public void processRow(ResultSet rs) throws SQLException {
 				String username = rs.getString(1);
