@@ -8,5 +8,6 @@ public interface ClientFactory {
 	PlaceController getPlaceController();
 	
 	IMainView getMainView();
+	SettingsView getSettingsView();
 
 }

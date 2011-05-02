@@ -17,5 +17,6 @@
 	<g:HTMLPanel styleName="{style.header}">
 		<g:Label styleName="{style.important}" text="Contacts Header" />
 		<g:Label ui:field="userName"></g:Label>
+		<g:Anchor ui:field="test">Settings</g:Anchor>
 	</g:HTMLPanel>
 </ui:UiBinder> 
