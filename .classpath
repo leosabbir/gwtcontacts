@@ -53,5 +53,6 @@
 			<attribute name="javadoc_location" value="file:/D:/Libraries/gwt-2.2.0/doc/javadoc/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jcaptcha.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
