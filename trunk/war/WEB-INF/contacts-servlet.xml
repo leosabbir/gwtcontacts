@@ -18,8 +18,16 @@
 	
    	<bean class="com.home.server.web.MainController"/>
    	<bean class="com.home.server.web.jsp.LoginController"/>
+   	
    	<bean class="com.home.server.web.jsp.RegistrationController">
+   		<constructor-arg ref="captchaService"/>
    		<constructor-arg ref="registrationService"/>
    	</bean>
+   	
+   	<bean id="captchaController" class="com.home.server.web.jsp.CaptchaController">
+		<constructor-arg ref="captchaService"/>
+	</bean>
+	
+	<bean id="captchaService" class="com.octo.captcha.service.image.DefaultManageableImageCaptchaService"/>
    	
 </beans>

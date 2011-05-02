@@ -14,15 +14,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.home.server.service.IRegistrationService;
 import com.home.server.web.model.RegistrationModel;
+import com.octo.captcha.service.CaptchaService;
+import com.octo.captcha.service.CaptchaServiceException;
 
 @Controller
 public class RegistrationController {
 
-	//private final CaptchaService captchaService;
+	private final CaptchaService captchaService;
 	private final IRegistrationService registrationService;
 
-	public RegistrationController(IRegistrationService registrationService) {
-		//this.captchaService = captchaService;
+	public RegistrationController(IRegistrationService registrationService, CaptchaService captchaService) {
+		this.captchaService = captchaService;
 		this.registrationService = registrationService;
 	}
 
@@ -56,15 +58,15 @@ public class RegistrationController {
 			return "register";
 		}
 
-//		try {
-//			if (!captchaService.validateResponseForID(request.getSession().getId(), registrationModel.getKeyCode())) {
-//				result.rejectValue("keyCode", "registration.captcha.invalid");
-//				return "register";
-//			}
-//		} catch (CaptchaServiceException ex) {
-//			result.rejectValue("keyCode", "registration.captcha.invalid");
-//			return "register";
-//		}
+		try {
+			if (!captchaService.validateResponseForID(request.getSession().getId(), registrationModel.getKeyCode())) {
+				result.rejectValue("keyCode", "registration.captcha.invalid");
+				return "register";
+			}
+		} catch (CaptchaServiceException ex) {
+			result.rejectValue("keyCode", "registration.captcha.invalid");
+			return "register";
+		}
 
 		if (registrationModel.getPassword().trim().equals("")) {
 			result.rejectValue("password", "NotEmpty.registrationModel.password");
