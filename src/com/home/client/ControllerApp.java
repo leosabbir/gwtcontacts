@@ -19,6 +19,7 @@ import com.home.client.places.MainPlace;
 import com.home.client.resources.ContactsCssResource;
 import com.home.client.resources.ContactsResources;
 import com.home.client.view.ClientFactory;
+import com.home.client.view.impl.ContactsHeader;
 
 public class ControllerApp implements EntryPoint {
 
@@ -29,6 +30,9 @@ public class ControllerApp implements EntryPoint {
 
 	@UiField
 	SimplePanel centerContainer;
+	
+	@UiField
+	ContactsHeader contactsHeader;
 
 	private Panel application;
 	
@@ -38,7 +42,7 @@ public class ControllerApp implements EntryPoint {
 		
 		this.application = uiBinder.createAndBindUi(this);
 		RootPanel.get().add(application);
-
+		
 		ClientFactory clientFactory = GWT.create(ClientFactory.class);
 		EventBus eventBus = clientFactory.getEventBus();
 		final PlaceController placeController = clientFactory.getPlaceController();
@@ -47,6 +51,8 @@ public class ControllerApp implements EntryPoint {
 		ActivityManager activityManager = new ActivityManager(activityMapper, eventBus);
 		activityManager.setDisplay(centerContainer);
 
+		contactsHeader.setPlaceController(clientFactory.getPlaceController());
+		
 		// start PlaceHistoryHandler with our PlaceHistoryMapper
 		ContactsPlaceHistoryMapper historyMapper = GWT.create(ContactsPlaceHistoryMapper.class);
 		final PlaceHistoryHandler historyHandler = new PlaceHistoryHandler(historyMapper);

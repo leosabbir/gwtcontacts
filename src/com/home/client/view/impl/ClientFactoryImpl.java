@@ -5,12 +5,14 @@ import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.place.shared.PlaceController;
 import com.home.client.view.ClientFactory;
 import com.home.client.view.IMainView;
+import com.home.client.view.SettingsView;
 
 public class ClientFactoryImpl implements ClientFactory {
 
 	private final EventBus eventBus;
 	private final PlaceController placeController;
 	private IMainView mainView;
+	private SettingsView settingsView;
 	
 	public ClientFactoryImpl() {
 		eventBus = new SimpleEventBus();
@@ -33,6 +35,14 @@ public class ClientFactoryImpl implements ClientFactory {
 			mainView = new MainView();
 		}
 		return mainView;
+	}
+
+	@Override
+	public SettingsView getSettingsView() {
+		if( settingsView == null){
+			settingsView = new SettingsViewImpl();
+		}
+		return settingsView;
 	}
 
 }
