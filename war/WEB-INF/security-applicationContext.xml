@@ -12,9 +12,11 @@
 		 	
 		 	<!-- don't intercept rpc calls -->
 		 	<security:intercept-url pattern="/contacts/**" access="ROLE_USER" />
+		 	<security:intercept-url pattern="/style/**" access="ROLE_USER" />
 		    <!-- Don't set any role restrictions on login.jsp -->
 		    <security:intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		    <security:intercept-url pattern="/register" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		    <security:intercept-url pattern="/captcha" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		 
 		    <!-- Restrict access to ALL other pages -->
 		    <security:intercept-url pattern="/**" access="ROLE_USER" />
