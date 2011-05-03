@@ -2,6 +2,7 @@ package com.home.server.web.jsp;
 
 import java.awt.image.BufferedImage;
 import java.io.OutputStream;
+import java.util.Locale;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,7 @@ import com.octo.captcha.CaptchaException;
 @Controller
 public class CaptchaController {
 	private final ImageCaptchaService imageCaptchaService;
-
+	
 	public CaptchaController(ImageCaptchaService imageCaptchaService) {
 		this.imageCaptchaService = imageCaptchaService;
 	}
@@ -39,7 +40,7 @@ public class CaptchaController {
 
 		do {
 			try {
-				challenge = imageCaptchaService.getImageChallengeForID(captchaId, RequestContextUtils.getLocale(request));
+				challenge = imageCaptchaService.getImageChallengeForID(captchaId, new Locale("en_US"));
 			} catch (CaptchaException e) {
 				if (retries < 0) throw e;
 			}
