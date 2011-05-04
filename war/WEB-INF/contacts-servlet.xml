@@ -93,6 +93,14 @@
 		<constructor-arg type="int" index="1"><value>255</value></constructor-arg>
 		<constructor-arg type="int" index="2"><value>0</value></constructor-arg>
 	</bean>
+	<bean id="fileStorage" class="com.home.server.service.impl.FileStorageServiceImpl"/>
+	<bean class="com.home.server.web.jsp.FileUploadController">
+		<constructor-arg index="0" ref="fileStorage"/>
+		<!-- TODO:// read the value from the properties file -->
+		<constructor-arg index="1" value="file://c:/upload/"/>
+	</bean>
+	
+	
 	
 <!-- 	<bean id="captchaService" class="com.octo.captcha.service.multitype.GenericManageableCaptchaService"> -->
 <!-- 		<constructor-arg index="0"><ref bean="imageEngine"/></constructor-arg> -->

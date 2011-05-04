@@ -8,7 +8,18 @@
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.home.server.entities" />
+<!-- 	<context:component-scan base-package="com.home.server.entities" /> -->
+
+	
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+        	<list>
+            	<value>WEB-INF/system.properties</value>
+            	<value>WEB-INF/application.properties</value>
+            </list>
+        </property>
+    </bean>
 	
 	<import resource="classpath:/WEB-INF/hibernate.xml" />
 	<import resource="classpath:/WEB-INF/dao-context.xml" />
@@ -20,5 +31,9 @@
 		<property name="basename" value="/WEB-INF/resourcebundle/messages" />
 		<property name="cacheSeconds" value="0" />
 	</bean>
-
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="50000" />
+	</bean>
+	
 </beans>

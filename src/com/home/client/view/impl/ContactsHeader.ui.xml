@@ -17,6 +17,9 @@
 	<g:HTMLPanel styleName="{style.header}">
 		<g:Label styleName="{style.important}" text="Contacts Header" />
 		<g:Label ui:field="userName"></g:Label>
-		<g:Anchor ui:field="test">Settings</g:Anchor>
+		<g:Anchor ui:field="settingsTest">Settings</g:Anchor>
+		<g:FormPanel ui:field="form">
+			<g:FileUpload name="upload123" ui:field="fileUpload"></g:FileUpload>
+		</g:FormPanel>
 	</g:HTMLPanel>
 </ui:UiBinder> 

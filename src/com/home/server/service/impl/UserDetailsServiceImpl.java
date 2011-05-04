@@ -18,18 +18,19 @@ public class UserDetailsServiceImpl extends JdbcDaoImpl implements UserDetailsSe
 	
 	@Override  
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException, DataAccessException {  
-        UserDetails user = userDao.findUserByName(username);  
-        if (user != null) {  
-  
-            Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();  
-            authorities.add(new GrantedAuthorityImpl("ROLE_USER"));  
-  
-            return new UserDetails(user.getEmail(), user.getUsername(), user.getPassword(), true, true, true, true,  
-                    authorities);  
-        }  
-  
-        throw new UsernameNotFoundException(  
-                messages.getMessage("JdbcDaoImpl.notFound", new Object[]{username}, "Username {0} not found"), username);  
+//        UserDetails user = userDao.findUserByName(username);  
+//        if (user != null) {  
+//  
+//            Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();  
+//            authorities.add(new GrantedAuthorityImpl("ROLE_USER"));  
+//  
+//            return new UserDetails(user.getEmail(), user.getUsername(), user.getPassword(), true, true, true, true,  
+//                    authorities);  
+//        }  
+//  
+//        throw new UsernameNotFoundException(  
+//                messages.getMessage("JdbcDaoImpl.notFound", new Object[]{username}, "Username {0} not found"), username);  
+		return null;
     }  
   
     public void setUserDao(UserDao userDao) {  
