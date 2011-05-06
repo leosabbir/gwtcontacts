@@ -8,7 +8,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.home.server.dao.ContactsDao;
+import com.home.server.dao.GenericDao;
 import com.home.server.dao.IContactsDao;
+import com.home.server.dao.PrincpalDao;
+import com.home.server.dao.UserContactsDao;
 import com.home.server.entities.ContactDetailsEntity;
 import com.home.server.entities.Contacts;
 import com.home.server.service.IContactsService;
@@ -19,9 +23,20 @@ import com.home.shared.entities.ContactNameId;
 public class ContactsService implements IContactsService {
 
 	@Autowired
-	IContactsDao contactDao;
+	ContactsDao contactDao;
 	
-	public ContactsService(IContactsDao contactDao){
+	@Autowired
+	PrincpalDao principalDao;
+	
+	@Autowired
+	UserContactsDao userContactsDao;
+	
+	
+	public ContactsService(){
+		
+	}
+	
+	public ContactsService(ContactsDao contactDao){
 		this.contactDao = contactDao;
 		//System.out.println(SecurityContextHolder.getContext().getAuthentication().getName());
 	}
@@ -29,10 +44,10 @@ public class ContactsService implements IContactsService {
 	@Override
 	@Transactional
 	public boolean deleteContact(int id) {
-		Contacts contact = this.contactDao.findContact(id);
-		if(contact != null){
-			return this.contactDao.deleteContact(contact);
-		}
+//		Contacts contact = this.contactDao.findContact(id);
+//		if(contact != null){
+//			return this.contactDao.deleteContact(contact);
+//		}
 		return false;
 	}
 
@@ -40,7 +55,7 @@ public class ContactsService implements IContactsService {
 	@Transactional
 	public ContactDetails findContact(int userId) {
 		ContactDetails contactDetails = new ContactDetails();
-		Contacts contacts = this.contactDao.findContact(userId);
+		Contacts contacts = this.contactDao.find(userId);
 		
 		contactDetails.setName(contacts.getFirstName());
 		contactDetails.setAddress(contacts.getAddress());
@@ -59,14 +74,15 @@ public class ContactsService implements IContactsService {
 		contacts.setAddress(contactDetails.getAddress());
 		contacts.setMobile(contactDetails.getMobile());
 		
-		return this.contactDao.saveContact(contacts);
+		return this.contactDao.save(contacts);
 	}
 
 	@Override
 	public boolean updateContact(ContactDetails test) {
-		Contacts updated = this.contactDao.findContact(test.getUserid());
-		updated.setAddress(test.getAddress());
-		return this.contactDao.updateContact(updated);
+//		Contacts updated = this.contactDao.findContact(test.getUserid());
+//		updated.setAddress(test.getAddress());
+//		return this.contactDao.updateContact(updated);
+		return false;
 		
 	}
 
