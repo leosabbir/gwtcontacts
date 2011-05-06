@@ -1,6 +1,7 @@
 package com.home.server.dao.impl;
 
-import com.home.server.dao.GenericDao;
+import java.util.List;
+
 import com.home.server.dao.PrincpalDao;
 import com.home.server.entities.Principal;
 
@@ -8,7 +9,7 @@ public class PrincipalDaoImp extends GenericDaoImpl<Principal> implements Princp
 
 	@Override
 	public Principal findPrincipalByEmailId(String emailId) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Principal> principals = getHibernateTemplate().find("from Principal where emailid = ?", new Object[]{emailId});
+		return principals.get(0);
 	}
 }
