@@ -22,28 +22,6 @@ CREATE DATABASE IF NOT EXISTS mycontacts;
 USE mycontacts;
 
 --
--- Definition of table `contactdetails`
---
-
-DROP TABLE IF EXISTS `contactdetails`;
-CREATE TABLE `contactdetails` (
-  `userid` int(11) NOT NULL AUTO_INCREMENT,
-  `mobile` varchar(255) DEFAULT NULL,
-  `emailid` varchar(255) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `contactdetails`
---
-
-/*!40000 ALTER TABLE `contactdetails` DISABLE KEYS */;
-/*!40000 ALTER TABLE `contactdetails` ENABLE KEYS */;
-
-
---
 -- Definition of table `contacts`
 --
 
@@ -51,13 +29,13 @@ DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE `contacts` (
   `contactid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `firstname` varchar(45) NOT NULL,
-  `middlename` varchar(45) NOT NULL,
+  `middlename` varchar(45) DEFAULT NULL,
   `lastname` varchar(45) NOT NULL,
   `address` varchar(45) NOT NULL,
-  `mobile` varchar(45) NOT NULL,
+  `mobile` varchar(45) DEFAULT NULL,
   `emailid` varchar(45) NOT NULL,
   PRIMARY KEY (`contactid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `contacts`
@@ -65,7 +43,10 @@ CREATE TABLE `contacts` (
 
 /*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
 INSERT INTO `contacts` (`contactid`,`firstname`,`middlename`,`lastname`,`address`,`mobile`,`emailid`) VALUES 
- (1,'Sabbir','Kumar','Manandhar','Bhaktapur','9841753847','leo.shabr@gmail.com');
+ (1,'Sabbir','Kumar','Manandhar','Bhaktapur','9841753847','leo.shabr@gmail.com'),
+ (2,'Bishwa','Hang','Rai','Jhapa','9841562354','nawa@n.com'),
+ (3,'Biru','Charan','Sainju','Suryabinayak','9841585559','nawa@n.com'),
+ (4,'Samit',' ','Pokharel','Pokhara','98415987562','nawa@n.com');
 /*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
 
 
@@ -78,12 +59,8 @@ CREATE TABLE `principal` (
   `emailid` varchar(45) NOT NULL,
   `username` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
-  `contactid` int(10) unsigned NOT NULL,
   `authority` varchar(45) NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`emailid`),
-  KEY `FK_principle_1` (`contactid`),
-  CONSTRAINT `FK_principle_1` FOREIGN KEY (`contactid`) REFERENCES `contacts` (`contactid`)
+  PRIMARY KEY (`emailid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -91,8 +68,10 @@ CREATE TABLE `principal` (
 --
 
 /*!40000 ALTER TABLE `principal` DISABLE KEYS */;
-INSERT INTO `principal` (`emailid`,`username`,`password`,`contactid`,`authority`,`name`) VALUES 
- ('leo.shabr@gmail.com','sabbir','4bd5361ee9f4a9ad8d7470efeb124d122d14d5bd',1,'USER_ROLE','sabbir');
+INSERT INTO `principal` (`emailid`,`username`,`password`,`authority`) VALUES 
+ ('leo.shabr@gmail.com','sabbir','4bd5361ee9f4a9ad8d7470efeb124d122d14d5bd','USER_ROLE'),
+ ('nawa@n.com','nawaraj','059333939c3f06e0ab9b259b13a8e5bc90852bea','ROLE_AUTHENTICATED'),
+ ('v@v.com','voldemort','00d021f0d82501995e5e5d19ba4e96038980a7b6','ROLE_AUTHENTICATED');
 /*!40000 ALTER TABLE `principal` ENABLE KEYS */;
 
 
