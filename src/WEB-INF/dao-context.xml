@@ -6,7 +6,19 @@
 				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
 				http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd">
 
-	<bean id="contactsDao" class="com.home.server.dao.impl.ContactsDao">
-		<constructor-arg ref="sessionFactory"/>
-	</bean>
+<!-- 	<bean id="contactsDao" class="com.home.server.dao.impl.ContactsDao"> -->
+<!-- 		<constructor-arg ref="sessionFactory"/> -->
+<!-- 	</bean> -->
+
+		<bean class="com.home.server.dao.impl.ContactsDaoImpl">
+			<property name="hibernateTemplate" ref="hibernateTemplate"/>
+		</bean>
+		
+		<bean id="principalDao" class="com.home.server.dao.impl.PrincipalDaoImp">
+			<property name="hibernateTemplate" ref="hibernateTemplate"/>
+		</bean>
+		
+		<bean class="com.home.server.dao.impl.UserContactsDaoImpl">
+			<property name="hibernateTemplate" ref="hibernateTemplate"/>
+		</bean>
 </beans>

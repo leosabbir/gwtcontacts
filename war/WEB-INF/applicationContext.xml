@@ -24,7 +24,7 @@
 	<import resource="classpath:/WEB-INF/hibernate.xml" />
 	<import resource="classpath:/WEB-INF/dao-context.xml" />
 	<import resource="classpath:/WEB-INF/service-context.xml" />
-<!--	<import resource="classpath:/WEB-INF/template-context.xml" />-->
+	<import resource="classpath:/WEB-INF/template-context.xml" />
 	
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
