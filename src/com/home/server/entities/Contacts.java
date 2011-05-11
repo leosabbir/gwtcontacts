@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
@@ -21,9 +23,11 @@ public class Contacts implements IsSerializable {
 	private String mobile;
 	private String emailId;
 	
+	private Principal principal;
+	
 	public void setContactId(int contactId) {
 		this.contactId = contactId;
-	}
+	}	
 	
 	@Id
 	@GeneratedValue
@@ -84,6 +88,16 @@ public class Contacts implements IsSerializable {
 	@Column(name="emailid")
 	public String getEmailId() {
 		return emailId;
+	}
+
+	public void setPrincipal(Principal principal) {
+		this.principal = principal;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "emailid", nullable = false,  insertable= false, updatable = false)
+	public Principal getPrincipal() {
+		return principal;
 	}
 
 }

@@ -20,7 +20,7 @@
         
         <property name="annotatedClasses">
             <list>
-                <value>com.home.server.entities.ContactDetailsEntity</value>
+<!--                 <value>com.home.server.entities.ContactDetailsEntity</value> -->
                 <value>com.home.server.entities.Contacts</value>
                 <value>com.home.server.entities.UserContacts</value>
                 <value>com.home.server.entities.Principal</value>

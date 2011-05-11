@@ -29,7 +29,6 @@ public class ContactsDao implements IContactsDao{
 	@Override
 	@Transactional
 	public List<Contacts> getAllContacts() {
-		//return hibernateTemplate.getSessionFactory().getCurrentSession().createQuery("from test").list();
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		//parameters.put("username", SecurityContextHolder.getContext().getAuthentication().getName());
 		String name = SecurityContextHolder.getContext().getAuthentication().getName();
