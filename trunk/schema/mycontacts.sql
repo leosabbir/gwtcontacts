@@ -34,7 +34,10 @@ CREATE TABLE `contacts` (
   `address` varchar(45) NOT NULL,
   `mobile` varchar(45) DEFAULT NULL,
   `emailid` varchar(45) NOT NULL,
-  PRIMARY KEY (`contactid`) USING BTREE
+  PRIMARY KEY (`contactid`) USING BTREE,
+  KEY `FKDE2D605378CA3221` (`emailid`),
+  CONSTRAINT `FKDE2D605378CA3221` FOREIGN KEY (`emailid`) REFERENCES `principal` (`emailid`),
+  CONSTRAINT `FK_contacts_1` FOREIGN KEY (`emailid`) REFERENCES `principal` (`emailid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
