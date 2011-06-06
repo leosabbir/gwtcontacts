@@ -22,8 +22,57 @@
 	-moz-border-radius: 5px 5px 0px 0px;
 }
 
+.contactDetailHeader {
+	background-color: #7879b1;
+	width: 100px;
+	height: 23px;
+	line-height: 23px;
+	padding-left: 5px;
+	-moz-border-radius: 5px 5px 0px 0px;
+}
+
 .contactListBody {
 	width: 125px;
 	background-color: #595b9b;
 	margin: 0px 10px;
+}
+
+.mainViewTabHeader {
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-moz-box-shadow: 0px 0px 1px 1px #888;
+	-webkit-box-shadow: 0px 0px 1px 1px #888;
+	box-shadow: 0px 0px 1px 1px #888;
+	height: 25px;
+	text-shadow: 0px 1px 0px #FFFFFF;
+	padding-top: 10px;
+	width: 150px;
+	float: left;
+	text-align: center;
+	font-size: 13px;
+	color: #363636;
+	cursor: pointer;
+}
+
+.mainViewDeckPanelContainer{
+	background-color: #8996a5;
+	border: 1px solid #667586;
+	clear: both;	
+}
+
+.contactsListContainer{
+	margin: 10px;
+	width: 200px;
+/* 	float: left;	 */
+}
+
+.contactsDetailContainer{
+	margin: 10px 10px 10px 0px;
+	
+}
+
+.contactsDetailBodyContainer{
+	clear: right;
+	background-color: #838bb1;
+	border: 2px groove #57608a;
 }

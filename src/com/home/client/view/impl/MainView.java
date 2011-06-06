@@ -3,10 +3,14 @@ package com.home.client.view.impl;
 import java.util.List;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.DeckPanel;
 import com.google.gwt.user.client.ui.FlexTable;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import com.home.client.view.IMainView;
 import com.home.client.view.components.ContactDetailsView;
@@ -33,10 +37,16 @@ public class MainView extends Composite implements IMainView {
 //	@UiField
 //	ContactsView contactsTable;
 //	
-
-	@UiField
-	MainList mainList;
 	
+	@UiField
+	DeckPanel mainViewDeckContainer;
+	
+	@UiField
+	Label contactsTab;
+	
+	@UiField
+	Label selfTab;
+
 	@UiField
 	ContactsList contactsList;
 	
@@ -45,14 +55,32 @@ public class MainView extends Composite implements IMainView {
 
 	public MainView() {
 		initWidget(uiBinder.createAndBindUi(this));
-		this.contactsList.setVisible(false);
+		//this.contactsList.setVisible(false);
+		this.mainViewDeckContainer.showWidget(0);
+		
+		this.contactsTab.addClickHandler( new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				mainViewDeckContainer.showWidget(1);
+				
+			}
+		});
+		
+		this.selfTab.addClickHandler( new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				mainViewDeckContainer.showWidget(0);
+				
+			}
+		});
 	}
 
 	@Override
 	public void setPresenter(Presenter presenter) {
 		this.presenter = presenter;
 		//this.contactsTable.setPresenter(presenter);
-		this.mainList.setPresenter(presenter);
 		this.contactsList.setPresenter(presenter);
 		
 	}
@@ -70,15 +98,11 @@ public class MainView extends Composite implements IMainView {
 
 	@Override
 	public void showSelfView() {
-		this.mainList.InvertSelection();
-		this.contactsList.setVisible(false);
 		
 	}
 
 	@Override
 	public void showContactsView() {
-		this.mainList.InvertSelection();
-		this.contactsList.setVisible(true);
 		
 	}
 
