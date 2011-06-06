@@ -7,11 +7,37 @@
 			font-weight: bold;
 		}
 	</ui:style>
-	<g:HorizontalPanel>
+	<g:HTMLPanel>
 <!-- 		<contact:ContactsView ui:field="contactsTable"></contact:ContactsView> -->
 <!-- 		 -->
-		<contact:MainList ui:field="mainList"></contact:MainList>
-		<contact:ContactsList ui:field="contactsList"></contact:ContactsList>
-		<contact:ContactDetailsView ui:field="contactDetailView"></contact:ContactDetailsView>
-	</g:HorizontalPanel>
+		<g:HTMLPanel>
+			<g:Label ui:field="selfTab" styleName="mainViewTabHeader">Self</g:Label>
+			<g:Label ui:field="contactsTab" styleName="mainViewTabHeader">Contacts</g:Label>
+		</g:HTMLPanel>
+		
+		<g:HTMLPanel>
+			<g:DeckPanel ui:field="mainViewDeckContainer" styleName="mainViewDeckPanelContainer">
+				<contact:SelfView></contact:SelfView>
+				
+				<g:HTMLPanel>
+					<table width="100%">
+						<tr>
+							<td width="300px">
+								<contact:ContactsList ui:field="contactsList"></contact:ContactsList>
+							</td>
+							<td>
+								<contact:ContactDetailsView ui:field="contactDetailView"></contact:ContactDetailsView>
+							</td>
+						</tr>
+					</table>
+				</g:HTMLPanel>
+			
+			</g:DeckPanel>
+		</g:HTMLPanel>
+<!-- 		<g:HTMLPanel> -->
+<!-- 			<contact:MainList ui:field="mainList"></contact:MainList> -->
+<!-- 			<contact:ContactsList ui:field="contactsList"></contact:ContactsList> -->
+<!-- 			<contact:ContactDetailsView ui:field="contactDetailView"></contact:ContactDetailsView> -->
+<!-- 		</g:HTMLPanel> -->
+	</g:HTMLPanel>
 </ui:UiBinder> 

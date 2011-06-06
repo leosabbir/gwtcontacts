@@ -6,35 +6,37 @@
 			font-weight: bold;
 		}
 	</ui:style>
-	<g:HTMLPanel>
-		<table>
-			<tr>
-				<td>
-					<g:Label text="Name: "></g:Label>
-				</td>
-				<td>
-					<g:Label ui:field="nameField"></g:Label>
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<g:Label text="Address: "></g:Label>
-				</td>
-				<td>
-					<g:Label ui:field="addressField"></g:Label>
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<g:Label text="Mobile: "></g:Label>
-				</td>
-				<td>
-					<g:Label ui:field="mobileField"></g:Label>
-				</td>
-			</tr>		
-		</table>
-		
+	<g:HTMLPanel styleName="contactsDetailContainer">
+		<div class="contactDetailHeader"><g:Label>Contact Details</g:Label></div>
+		<g:HTMLPanel styleName="contactsDetailBodyContainer">
+			<table>
+				<tr>
+					<td>
+						<g:Label text="Name: "></g:Label>
+					</td>
+					<td>
+						<g:Label ui:field="nameField"></g:Label>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<g:Label text="Address: "></g:Label>
+					</td>
+					<td>
+						<g:Label ui:field="addressField"></g:Label>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<g:Label text="Mobile: "></g:Label>
+					</td>
+					<td>
+						<g:Label ui:field="mobileField"></g:Label>
+					</td>
+				</tr>		
+			</table>
+		</g:HTMLPanel>
 	</g:HTMLPanel>
 </ui:UiBinder> 

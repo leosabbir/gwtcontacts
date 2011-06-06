@@ -15,13 +15,10 @@ public class ContactsDaoImpl extends GenericDaoImpl<Contacts> implements Contact
 
 	@Override
 	public Set<Contacts> getAllContacts() {
-		//return hibernateTemplate.getSessionFactory().getCurrentSession().createQuery("from test").list();
 		Map<String, Object> parameters = new HashMap<String, Object>();
-		//parameters.put("username", SecurityContextHolder.getContext().getAuthentication().getName());
 		String name = SecurityContextHolder.getContext().getAuthentication().getName();
 		List<Principal> principals = getHibernateTemplate().find("from Principal where username = ?", new Object[]{name});
 		String emailId = principals.get(0).getEmailId();
-		//parameters.put("emailid", emailId);
 		return principals.get(0).getContacts();//getHibernateTemplate().find("from Contacts where emailid = ?", emailId);
 	}
 

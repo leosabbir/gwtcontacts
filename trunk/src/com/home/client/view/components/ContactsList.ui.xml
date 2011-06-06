@@ -6,8 +6,8 @@
 			font-weight: bold;
 		}
 	</ui:style>
-	<g:HTMLPanel>
+	<g:HTMLPanel styleName="contactsListContainer">
 		<div class="contactListHeader"><g:Label>Contacts</g:Label></div>
 		<c:CellTable ui:field="contactsList"></c:CellTable>
 	</g:HTMLPanel>
-</ui:UiBinder> 
+</ui:UiBinder>
