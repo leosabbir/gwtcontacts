@@ -13,12 +13,14 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import com.home.client.view.IMainView;
+import com.home.client.view.components.AddContact;
 import com.home.client.view.components.ContactDetailsView;
 import com.home.client.view.components.ContactsList;
 import com.home.client.view.components.ContactsView;
 import com.home.client.view.components.MainList;
 import com.home.shared.entities.ContactDetails;
 import com.home.shared.entities.ContactNameId;
+import com.home.shared.proxy.ContactDetailsProxy;
 
 public class MainView extends Composite implements IMainView {
 
@@ -46,6 +48,12 @@ public class MainView extends Composite implements IMainView {
 	
 	@UiField
 	Label selfTab;
+	
+	@UiField
+	Label addContactTab;
+	
+	@UiField
+	AddContact addContact;
 
 	@UiField
 	ContactsList contactsList;
@@ -75,6 +83,16 @@ public class MainView extends Composite implements IMainView {
 				
 			}
 		});
+		
+		this.addContactTab.addClickHandler( new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				mainViewDeckContainer.showWidget(2);
+				
+			}
+		});
+
 	}
 
 	@Override
@@ -82,6 +100,7 @@ public class MainView extends Composite implements IMainView {
 		this.presenter = presenter;
 		//this.contactsTable.setPresenter(presenter);
 		this.contactsList.setPresenter(presenter);
+		this.addContact.setPresenter(presenter);
 		
 	}
 
@@ -92,7 +111,7 @@ public class MainView extends Composite implements IMainView {
 	}
 	
 	@Override
-	public void showSelectedContactDetail(ContactDetails contactDetails){
+	public void showSelectedContactDetail(ContactDetailsProxy contactDetails){
 		this.contactDetailView.setData(contactDetails);
 	}
 

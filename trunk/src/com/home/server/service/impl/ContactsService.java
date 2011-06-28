@@ -15,6 +15,7 @@ import com.home.server.dao.PrincpalDao;
 import com.home.server.dao.UserContactsDao;
 import com.home.server.entities.ContactDetailsEntity;
 import com.home.server.entities.Contacts;
+import com.home.server.entities.Principal;
 import com.home.server.service.IContactsService;
 import com.home.shared.entities.ContactDetails;
 import com.home.shared.entities.ContactNameId;
@@ -38,7 +39,6 @@ public class ContactsService implements IContactsService {
 	
 	public ContactsService(ContactsDao contactDao){
 		this.contactDao = contactDao;
-		//System.out.println(SecurityContextHolder.getContext().getAuthentication().getName());
 	}
 	
 	@Override
@@ -57,7 +57,7 @@ public class ContactsService implements IContactsService {
 		ContactDetails contactDetails = new ContactDetails();
 		Contacts contacts = this.contactDao.find(userId);
 		
-		contactDetails.setName(contacts.getFirstName());
+		contactDetails.setFirstName(contacts.getFirstName());
 		contactDetails.setAddress(contacts.getAddress());
 		contactDetails.setMobile(contacts.getMobile());
 		contactDetails.setUserid(userId);
@@ -70,10 +70,15 @@ public class ContactsService implements IContactsService {
 	public boolean saveContact(ContactDetails contactDetails) {
 		Contacts contacts = new Contacts();
 		
-		contacts.setFirstName(contactDetails.getName());
+		Principal principal = this.principalDao.find(SecurityContextHolder.getContext().getAuthentication().getName());
+		
+		contacts.setFirstName(contactDetails.getFirstName());
+		contacts.setMiddleName(contactDetails.getMiddleName());
+		contacts.setLastName(contactDetails.getLastName());
 		contacts.setAddress(contactDetails.getAddress());
 		contacts.setMobile(contactDetails.getMobile());
-		
+		contacts.setEmailId(contactDetails.getEmailId());
+		//SecurityContextHolder.getContext().getAuthentication().
 		return this.contactDao.save(contacts);
 	}
 

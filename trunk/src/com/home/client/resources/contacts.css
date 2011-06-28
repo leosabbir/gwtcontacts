@@ -76,3 +76,21 @@
 	background-color: #838bb1;
 	border: 2px groove #57608a;
 }
+
+.addContactContainer{
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-moz-box-shadow: 0px 0px 1px 1px #888;
+	-webkit-box-shadow: 0px 0px 1px 1px #888;
+	box-shadow: 0px 0px 1px 1px #888;
+	background-color: #838BB1;
+    border: 2px groove #57608A;
+    clear: both;
+    margin: 50px auto;
+    padding: 15px;
+    width: 500px !important;
+}
+
+.contactDetailInput{
+	width: 300px;	
+}
