@@ -5,7 +5,7 @@ import java.util.List;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.home.shared.entities.ContactDetails;
 import com.home.shared.entities.ContactNameId;
-import com.home.shared.proxy.ContactDetailsProxy;
+import com.home.shared.proxy.ContactsProxy;
 
 public interface IMainView extends IsWidget {
 	
@@ -13,7 +13,7 @@ public interface IMainView extends IsWidget {
 	
 	void setContactsList(List<ContactNameId> allContactDetails);
 	
-	void showSelectedContactDetail(ContactDetailsProxy contactDetails);
+	void showSelectedContactDetail(ContactsProxy contactDetails);
 	
 	void showSelfView();
 	

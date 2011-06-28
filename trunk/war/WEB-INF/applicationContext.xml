@@ -36,4 +36,6 @@
 		<property name="maxUploadSize" value="50000" />
 	</bean>
 	
+	<bean class="com.home.server.service.impl.ApplicationContextProvider"/>
+	
 </beans>

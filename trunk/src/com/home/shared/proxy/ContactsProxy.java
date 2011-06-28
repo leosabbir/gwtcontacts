@@ -3,27 +3,36 @@ package com.home.shared.proxy;
 import com.google.gwt.requestfactory.shared.EntityProxy;
 import com.google.gwt.requestfactory.shared.ProxyFor;
 import com.home.server.entities.ContactDetailsEntity;
+import com.home.server.entities.Contacts;
 import com.home.server.service.impl.ContactDetailsLocator;
 
 
-@ProxyFor( value = ContactDetailsEntity.class, locator = ContactDetailsLocator.class)
-public interface ContactDetailsProxy extends EntityProxy {
+@ProxyFor( value = Contacts.class, locator = ContactDetailsLocator.class)
+public interface ContactsProxy extends EntityProxy {
 
-	Integer getUserId();
+	int getContactId();
 	
 	String getEmailId();
 	
-	String getName();
+	String getFirstName();
+	
+	String getMiddleName();
+	
+	String getLastName();
 	
 	String getMobile();
 	
 	String getAddress();
 	
-	void setUserId(Integer userId);
+	void setContactId(int userId);
 	
 	void setEmailId(String emailId);
 	
-	void setName(String name);
+	void setFirstName(String name);
+	
+	void setMiddleName(String name);
+	
+	void setLastName(String name);
 	
 	void setMobile(String mobile);
 	
