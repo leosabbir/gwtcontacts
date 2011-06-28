@@ -20,7 +20,7 @@ import com.home.client.view.components.ContactsView;
 import com.home.client.view.components.MainList;
 import com.home.shared.entities.ContactDetails;
 import com.home.shared.entities.ContactNameId;
-import com.home.shared.proxy.ContactDetailsProxy;
+import com.home.shared.proxy.ContactsProxy;
 
 public class MainView extends Composite implements IMainView {
 
@@ -111,7 +111,7 @@ public class MainView extends Composite implements IMainView {
 	}
 	
 	@Override
-	public void showSelectedContactDetail(ContactDetailsProxy contactDetails){
+	public void showSelectedContactDetail(ContactsProxy contactDetails){
 		this.contactDetailView.setData(contactDetails);
 	}
 

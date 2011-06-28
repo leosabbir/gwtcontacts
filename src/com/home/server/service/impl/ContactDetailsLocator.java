@@ -5,32 +5,43 @@ import org.springframework.transaction.annotation.Transactional;
 import com.google.gwt.requestfactory.shared.Locator;
 import com.home.server.entities.ContactDetailsEntity;
 import com.home.server.entities.Contacts;
-import com.home.shared.entities.ContactDetails;
 
-public class ContactDetailsLocator extends Locator<ContactDetailsEntity, Long> {
+public class ContactDetailsLocator extends Locator<Contacts, Long> {
+	
+	
+	
+	@Transactional
+	public static ContactDetailsEntity getContactDetails(int userId) {
+		ContactDetailsEntity contactDetails = new ContactDetailsEntity();
+//		Contacts contact = contactDao.find(userId);
+//		
+//		contactDetails.setName(contact.getFirstName());
+//		contactDetails.setAddress(contact.getAddress());
+//		contactDetails.setMobile(contact.getMobile());
+		
+		return contactDetails; 
+	}
 
 	@Override
-	public ContactDetailsEntity create(
-			Class<? extends ContactDetailsEntity> clazz) {
+	public Contacts create(Class<? extends Contacts> clazz) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ContactDetailsEntity find(
-			Class<? extends ContactDetailsEntity> clazz, Long id) {
+	public Contacts find(Class<? extends Contacts> clazz, Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Class<ContactDetailsEntity> getDomainType() {
+	public Class<Contacts> getDomainType() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Long getId(ContactDetailsEntity domainObject) {
+	public Long getId(Contacts domainObject) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -42,21 +53,9 @@ public class ContactDetailsLocator extends Locator<ContactDetailsEntity, Long> {
 	}
 
 	@Override
-	public Object getVersion(ContactDetailsEntity domainObject) {
+	public Object getVersion(Contacts domainObject) {
 		// TODO Auto-generated method stub
 		return null;
-	}
-	
-	@Transactional
-	public static ContactDetailsEntity getContactDetails(int userId) {
-		ContactDetailsEntity contactDetails = new ContactDetailsEntity();
-		
-		contactDetails.setName("Test");
-		contactDetails.setAddress("testAddress");
-		contactDetails.setMobile("testMobile");
-		contactDetails.setUserId(25);
-		
-		return contactDetails; 
 	}
 
 }

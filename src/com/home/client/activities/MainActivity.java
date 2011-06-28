@@ -15,7 +15,7 @@ import com.home.client.view.IMainView.Presenter;
 import com.home.server.entities.ContactDetailsEntity;
 import com.home.shared.entities.ContactDetails;
 import com.home.shared.entities.ContactNameId;
-import com.home.shared.proxy.ContactDetailsProxy;
+import com.home.shared.proxy.ContactsProxy;
 import com.home.shared.services.ContactsRequestFactory;
 
 public class MainActivity extends AbstractActivity implements Presenter {
@@ -109,11 +109,11 @@ public class MainActivity extends AbstractActivity implements Presenter {
 //				
 //			}
 //		});
-		this.requestFactory.contactDetailsRequest().getContactDetails(userId).fire( new Receiver<ContactDetailsProxy>() {
+		this.requestFactory.contactDetailsRequest().findContact(userId).fire( new Receiver<ContactsProxy>() {
 
 			@Override
-			public void onSuccess(ContactDetailsProxy response) {
-				System.out.println(response.getName() + response.getAddress() + response.getUserId() + response.getMobile());
+			public void onSuccess(ContactsProxy response) {
+				System.out.println(response.getFirstName() + response.getAddress() + response.getContactId() + response.getMobile());
 				mainView.showSelectedContactDetail(response);
 			}
 			

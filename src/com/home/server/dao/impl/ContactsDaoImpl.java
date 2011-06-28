@@ -21,5 +21,9 @@ public class ContactsDaoImpl extends GenericDaoImpl<Contacts> implements Contact
 		String emailId = principals.get(0).getEmailId();
 		return principals.get(0).getContacts();//getHibernateTemplate().find("from Contacts where emailid = ?", emailId);
 	}
+	
+	public Contacts findContact(int userId){
+		return this.find(userId);
+	}
 
 }
