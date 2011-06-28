@@ -25,11 +25,11 @@ public class ContactDetailsEntity implements IsSerializable {
 	@Id
 	@GeneratedValue
 	@Column(name="userid")
-	public Integer getId(){
+	public Integer getUserId(){
 		return this.userId;
 	}
 	
-	public void setId(Integer value){
+	public void setUserId(Integer value){
 		this.userId = value;
 	}
 

@@ -13,6 +13,7 @@
 		<g:HTMLPanel>
 			<g:Label ui:field="selfTab" styleName="mainViewTabHeader">Self</g:Label>
 			<g:Label ui:field="contactsTab" styleName="mainViewTabHeader">Contacts</g:Label>
+			<g:Label ui:field="addContactTab" styleName="mainViewTabHeader">Add Contact</g:Label>
 		</g:HTMLPanel>
 		
 		<g:HTMLPanel>
@@ -31,6 +32,8 @@
 						</tr>
 					</table>
 				</g:HTMLPanel>
+				
+				<contact:AddContact ui:field="addContact"></contact:AddContact>
 			
 			</g:DeckPanel>
 		</g:HTMLPanel>

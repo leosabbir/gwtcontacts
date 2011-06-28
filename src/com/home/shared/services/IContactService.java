@@ -12,9 +12,14 @@ import com.home.shared.entities.ContactNameId;
 public interface IContactService extends RemoteService {
 
 	boolean addContact(ContactDetails contact);
-	boolean update(ContactDetails contact);
+	
+	boolean update(ContactDetails contact); 
+	
 	boolean deleteContact(int contactId);
+	
 	ContactDetails findContact(int contactId);
+	
 	List<ContactNameId> getAllContacts();
+	
 	ContactDetails getContact(int contactId);
 }

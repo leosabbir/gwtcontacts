@@ -22,7 +22,7 @@ public class ContactsActivityMapper implements ActivityMapper {
 		if (place instanceof MainPlace) {
 			MainPlace mainPlace = (MainPlace) place;
 			//clientFactory.getNavigationalPanel().monitoringSelected();
-			return new MainActivity(clientFactory.getMainView());
+			return new MainActivity(clientFactory.getMainView(), clientFactory.getRequestFactory());
 		}else if(place instanceof SettingsPlace){
 			SettingsPlace settingsPlace = (SettingsPlace) place;
 			return new SettingsActivity(clientFactory.getSettingsView());

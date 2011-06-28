@@ -12,6 +12,7 @@ import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import com.home.shared.entities.ContactDetails;
+import com.home.shared.proxy.ContactDetailsProxy;
 
 public class ContactDetailsView extends Composite {
 
@@ -35,7 +36,7 @@ public class ContactDetailsView extends Composite {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 	
-	public void setData(ContactDetails contactDetails){
+	public void setData(ContactDetailsProxy contactDetails){
 		this.nameField.setText(contactDetails.getName());
 		this.addressField.setText(contactDetails.getAddress());
 		this.mobileField.setText(contactDetails.getMobile());

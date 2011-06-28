@@ -27,7 +27,7 @@ public class GreetingServiceImpl implements IGreetingService {
 		ContactDetails test = new ContactDetails();
 		test.setAddress("Bhaktapur");
 		test.setMobile("9841753847");
-		test.setName("Bishwa");
+		test.setFirstName("Bishwa");
 		//this.contactService.save(test);
 		Object obj = this.contactService.findContact(1);
 		//this.contactService.delete(3);

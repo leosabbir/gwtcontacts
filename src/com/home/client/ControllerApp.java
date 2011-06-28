@@ -7,6 +7,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
+import com.google.gwt.requestfactory.shared.RequestFactory;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTMLPanel;
@@ -20,6 +21,7 @@ import com.home.client.resources.ContactsCssResource;
 import com.home.client.resources.ContactsResources;
 import com.home.client.view.ClientFactory;
 import com.home.client.view.impl.ContactsHeader;
+import com.home.shared.services.ContactsRequestFactory;
 
 public class ControllerApp implements EntryPoint {
 
@@ -44,7 +46,9 @@ public class ControllerApp implements EntryPoint {
 		RootPanel.get().add(application);
 		
 		ClientFactory clientFactory = GWT.create(ClientFactory.class);
+		
 		EventBus eventBus = clientFactory.getEventBus();
+		
 		final PlaceController placeController = clientFactory.getPlaceController();
 		// start ActivityManager for the main widget with our ActivityMapper
 		ActivityMapper activityMapper = new ContactsActivityMapper(clientFactory);

@@ -53,7 +53,7 @@ public class ContactsView extends Composite implements Handler{
 
 			@Override
 			public String getValue(ContactDetails object) {
-				return object.getName();
+				return object.getFirstName();
 			}
 		};
 		
@@ -61,7 +61,7 @@ public class ContactsView extends Composite implements Handler{
 
 			@Override
 			public String getValue(ContactDetails object) {
-				return object.getName();
+				return object.getFirstName();
 			}
 		};
 		

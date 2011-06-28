@@ -51,7 +51,7 @@ public class ContactApi implements IContactService {
 		ContactDetails contact = contactsService.findContact(contactId);
 		test.setAddress(contact.getAddress());
 		test.setMobile(contact.getMobile());
-		test.setName(contact.getName());
+		test.setFirstName(contact.getFirstName());
 		test.setUserid(contact.getUserid());
 		return test;
 	}
