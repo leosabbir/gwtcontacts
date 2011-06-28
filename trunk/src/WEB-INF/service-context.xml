@@ -10,6 +10,8 @@
 <!-- 		<constructor-arg ref="contactsDao"/> -->
 	</bean>
 	
+<!-- 	<bean class="com.home.server.service.impl.ContactDetailsLocator"/> -->
+	
 	<bean id="registrationService" class="com.home.server.service.impl.RegistrationService">
 		<constructor-arg ref="principalDao"/>
 		<constructor-arg ref="passwordEncoder"/>
