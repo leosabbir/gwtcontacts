@@ -25,9 +25,9 @@ public class GreetingServiceImpl implements IGreetingService {
 	public String greetServer(String input) throws IllegalArgumentException {
 		// Verify that the input is valid.
 		ContactDetails test = new ContactDetails();
-		test.setAddress("Bhaktapur");
-		test.setMobile("9841753847");
-		test.setFirstName("Bishwa");
+		test.setAddress("Hogwart");
+		test.setMobile("017657686");
+		test.setFirstName("Tom");
 		//this.contactService.save(test);
 		Object obj = this.contactService.findContact(1);
 		//this.contactService.delete(3);
