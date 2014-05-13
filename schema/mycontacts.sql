@@ -46,10 +46,10 @@ CREATE TABLE `contacts` (
 
 /*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
 INSERT INTO `contacts` (`contactid`,`firstname`,`middlename`,`lastname`,`address`,`mobile`,`emailid`) VALUES 
- (1,'Sabbir','Kumar','Manandhar','Bhaktapur','9841753847','leo.shabr@gmail.com'),
- (2,'Bishwa','Hang','Rai','Jhapa','9841562354','nawa@n.com'),
- (3,'Biru','Charan','Sainju','Suryabinayak','9841585559','nawa@n.com'),
- (4,'Samit',' ','Pokharel','Pokhara','98415987562','nawa@n.com');
+ (1,'Tom','M','Ridle','Hogwart','9841555555','voldemort@hogwart.com'),
+ (2,'Ginny',' ',' ','Burrow','9841555555','ginny@hogwart.com'),
+ (3,'Hermionie',' ',' ','Hogwart','9841555555','hermionie@hogwart.com'),
+ (4,'Sampok',' ','P','Hogwart','9841555555','nawa@hogwart.com');
 /*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
 
 
@@ -72,7 +72,7 @@ CREATE TABLE `principal` (
 
 /*!40000 ALTER TABLE `principal` DISABLE KEYS */;
 INSERT INTO `principal` (`emailid`,`username`,`password`,`authority`) VALUES 
- ('leo.shabr@gmail.com','sabbir','4bd5361ee9f4a9ad8d7470efeb124d122d14d5bd','USER_ROLE'),
+ ('riddle@gmail.com','voldemort','4bd5361ee9f4a9ad8d7470efeb124d122d14d5bd','USER_ROLE'),
  ('nawa@n.com','nawaraj','059333939c3f06e0ab9b259b13a8e5bc90852bea','ROLE_AUTHENTICATED'),
  ('v@v.com','voldemort','00d021f0d82501995e5e5d19ba4e96038980a7b6','ROLE_AUTHENTICATED');
 /*!40000 ALTER TABLE `principal` ENABLE KEYS */;
